@@ -79,6 +79,91 @@ export default function HomePage() {
   }, []);
 
   return (
+    <>
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Fann's Cleaning Services",
+            "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&h=630&fit=crop",
+            "@id": "https://fanns-cleaning.vercel.app",
+            "url": "https://fanns-cleaning.vercel.app",
+            "telephone": "+1-555-123-4567",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "",
+              "addressLocality": "Tomball",
+              "addressRegion": "TX",
+              "postalCode": "77375",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 30.0933,
+              "longitude": -95.6161
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "08:00",
+              "closes": "18:00"
+            },
+            "sameAs": [
+              "https://www.facebook.com/fannscleaning",
+              "https://www.instagram.com/fannscleaning"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "127"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Tomball"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Cleaning Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Residential Cleaning",
+                    "description": "Professional home cleaning services including routine maintenance, deep cleaning, and move-in/move-out cleaning"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Commercial Cleaning",
+                    "description": "Professional office and business cleaning services"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Deep Cleaning",
+                    "description": "Intensive deep cleaning for kitchens, bathrooms, and high-traffic areas"
+                  }
+                }
+              ]
+            }
+          })
+        }}
+      />
     <main className="bg-white text-gray-900">
       {/* NAVIGATION BAR */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -888,5 +973,6 @@ export default function HomePage() {
         </div>
       </footer>
     </main>
+    </>
   );
 }
