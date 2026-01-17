@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export default function ServicesPage() {
     {
       title: "Residential Cleaning",
       icon: "🏠",
+      image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80",
       description: "Transform your home into a pristine sanctuary with our comprehensive residential cleaning services.",
       features: [
         "Regular weekly or bi-weekly cleaning",
@@ -25,6 +27,7 @@ export default function ServicesPage() {
     {
       title: "Commercial Cleaning",
       icon: "🏢",
+      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
       description: "Maintain a professional, healthy workspace that impresses clients and boosts employee morale.",
       features: [
         "Office and workspace cleaning",
@@ -39,6 +42,7 @@ export default function ServicesPage() {
     {
       title: "Deep Cleaning",
       icon: "✨",
+      image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&q=80",
       description: "Our most thorough service that tackles every nook and cranny for a truly spotless space.",
       features: [
         "Intensive cleaning of all surfaces",
@@ -53,6 +57,7 @@ export default function ServicesPage() {
     {
       title: "Move In/Move Out Cleaning",
       icon: "📦",
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
       description: "Make your transition smooth with our comprehensive move cleaning services.",
       features: [
         "Complete property cleaning top to bottom",
@@ -67,6 +72,7 @@ export default function ServicesPage() {
     {
       title: "Post-Construction Cleaning",
       icon: "🔨",
+      image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
       description: "Remove construction dust and debris to reveal your beautiful new or renovated space.",
       features: [
         "Construction dust removal",
@@ -81,6 +87,7 @@ export default function ServicesPage() {
     {
       title: "Specialty Cleaning",
       icon: "⭐",
+      image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=800&q=80",
       description: "Customized cleaning solutions for unique situations and special requirements.",
       features: [
         "Event cleanup (before/after)",
@@ -97,13 +104,22 @@ export default function ServicesPage() {
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-            Our Services
+      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1920&q=80"
+            alt="Professional cleaning services"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-slate-900/80"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Professional Cleaning Services
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-blue-50">
-            Professional cleaning solutions tailored to your specific needs. From routine maintenance to deep cleaning, we've got you covered.
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-200">
+            Comprehensive cleaning solutions tailored to your specific needs. From routine maintenance to deep cleaning, we've got you covered.
           </p>
         </div>
       </section>
@@ -115,12 +131,20 @@ export default function ServicesPage() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group"
               >
-                <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6">
-                  <div className="flex items-center space-x-4">
-                    <span className="text-5xl">{service.icon}</span>
-                    <h2 className="text-3xl font-bold">{service.title}</h2>
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                    <div className="p-6 text-white">
+                      <span className="text-4xl mb-2 block">{service.icon}</span>
+                      <h2 className="text-3xl font-bold">{service.title}</h2>
+                    </div>
                   </div>
                 </div>
                 <div className="p-8">

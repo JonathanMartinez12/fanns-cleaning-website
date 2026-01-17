@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -42,12 +43,21 @@ export default function ContactPage() {
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?w=1920&q=80"
+            alt="Contact us"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-slate-900/80"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Get In Touch
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-blue-50">
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-200">
             Ready for a cleaner space? Contact us today for a free quote!
           </p>
         </div>
@@ -58,8 +68,8 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-10">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
                 Request a Free Quote
               </h2>
 
@@ -195,10 +205,19 @@ export default function ContactPage() {
 
             {/* Contact Information */}
             <div>
-              <div className="bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-xl shadow-lg p-8 mb-8">
-                <h2 className="text-3xl font-bold mb-6">
-                  Contact Information
-                </h2>
+              <div className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-2xl shadow-2xl p-8 lg:p-10 mb-8 overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
+                  <Image
+                    src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?w=800&q=80"
+                    alt="Contact"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative">
+                  <h2 className="text-4xl font-bold mb-8">
+                    Contact Information
+                  </h2>
 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
@@ -261,11 +280,12 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
+                </div>
               </div>
 
               {/* Service Area Map Placeholder */}
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">
                   Our Service Area
                 </h3>
                 <p className="text-gray-700 mb-4">

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -10,12 +11,21 @@ export default function AboutPage() {
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1920&q=80"
+            alt="About Fann's Cleaning"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-slate-900/80"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
             About Fann's Cleaning
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-blue-50">
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-200">
             Your trusted partner for professional cleaning services in Tomball, TX
           </p>
         </div>
@@ -23,14 +33,21 @@ export default function AboutPage() {
 
       {/* Our Story */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Story
-            </h2>
-          </div>
-
-          <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                alt="Our story"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="text-5xl font-bold text-gray-900 mb-6">
+                Our Story
+              </h2>
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
             <p className="text-xl leading-relaxed">
               Fann's Cleaning Services was founded with a simple mission: to provide exceptional cleaning services that transform spaces and improve lives. What started as a small, family-owned operation has grown into one of Tomball's most trusted cleaning service providers.
             </p>
@@ -42,6 +59,8 @@ export default function AboutPage() {
             <p className="text-lg leading-relaxed">
               Over the years, we've built lasting relationships with our clients based on trust, reliability, and exceptional service. We're not just cleaners – we're your neighbors, committed to making Tomball a cleaner, healthier place for everyone.
             </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
