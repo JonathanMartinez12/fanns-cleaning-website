@@ -61,13 +61,170 @@ export default function HomePage() {
   const [whyUsRef, whyUsVisible] = useScrollAnimation();
   const [testimonialsRef, testimonialsVisible] = useScrollAnimation();
   const [statsRef, statsVisible] = useScrollAnimation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const clientsCount = useCounter(500, 2000, statsVisible);
   const yearsCount = useCounter(10, 2000, statsVisible);
   const satisfactionCount = useCounter(100, 2000, statsVisible);
 
+  // Handle scroll for navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <main className="bg-white text-gray-900">
+      {/* NAVIGATION BAR */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white shadow-lg py-4'
+          : 'bg-transparent py-6'
+      }`}>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <a href="#" className="flex items-center gap-2 group">
+              <div className={`text-2xl font-bold transition-colors ${
+                isScrolled ? 'text-blue-600' : 'text-white'
+              }`}>
+                <span className="group-hover:scale-110 inline-block transition-transform">✨</span>
+                Fann's Cleaning
+              </div>
+            </a>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-8">
+              <a
+                href="#services"
+                className={`font-semibold hover:scale-105 transition-all ${
+                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                }`}
+              >
+                Services
+              </a>
+              <a
+                href="#testimonials"
+                className={`font-semibold hover:scale-105 transition-all ${
+                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                }`}
+              >
+                Testimonials
+              </a>
+              <a
+                href="#contact"
+                className={`font-semibold hover:scale-105 transition-all ${
+                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                }`}
+              >
+                Contact
+              </a>
+            </div>
+
+            {/* Phone & CTA */}
+            <div className="hidden lg:flex items-center gap-4">
+              {/* Phone Button */}
+              <a
+                href="tel:+15551234567"
+                className={`group flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 ${
+                  isScrolled
+                    ? 'bg-blue-50 text-blue-600 hover:bg-blue-100'
+                    : 'bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm'
+                }`}
+              >
+                <svg
+                  className="w-5 h-5 group-hover:rotate-12 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span className="hidden xl:inline">(555) 123-4567</span>
+                <span className="xl:hidden">Call</span>
+              </a>
+
+              {/* Get Quote CTA */}
+              <a
+                href="#contact"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                Get Free Quote
+              </a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={`lg:hidden p-2 rounded-lg transition-colors ${
+                isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/20'
+              }`}
+              aria-label="Toggle menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="lg:hidden mt-4 py-4 bg-white rounded-2xl shadow-2xl animate-slide-down">
+              <div className="flex flex-col space-y-4 px-4">
+                <a
+                  href="#services"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2"
+                >
+                  Services
+                </a>
+                <a
+                  href="#testimonials"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2"
+                >
+                  Testimonials
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2"
+                >
+                  Contact
+                </a>
+                <div className="border-t pt-4 space-y-3">
+                  <a
+                    href="tel:+15551234567"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-2 bg-blue-50 text-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-100 transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    (555) 123-4567
+                  </a>
+                  <a
+                    href="#contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl transition-all"
+                  >
+                    Get Free Quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </nav>
       {/* HERO */}
       <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white py-32 overflow-hidden">
         {/* Animated decorative background pattern */}
@@ -280,7 +437,7 @@ export default function HomePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-28 bg-gray-50 overflow-hidden">
+      <section id="testimonials" className="py-28 bg-gray-50 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
