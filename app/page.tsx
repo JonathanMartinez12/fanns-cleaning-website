@@ -109,6 +109,22 @@ export default function HomePage() {
                 Services
               </a>
               <a
+                href="/about"
+                className={`font-semibold hover:scale-105 transition-all ${
+                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                }`}
+              >
+                About
+              </a>
+              <a
+                href="/blog"
+                className={`font-semibold hover:scale-105 transition-all ${
+                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                }`}
+              >
+                Blog
+              </a>
+              <a
                 href="#testimonials"
                 className={`font-semibold hover:scale-105 transition-all ${
                   isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
@@ -186,6 +202,20 @@ export default function HomePage() {
                   className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2"
                 >
                   Services
+                </a>
+                <a
+                  href="/about"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2"
+                >
+                  About
+                </a>
+                <a
+                  href="/blog"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2"
+                >
+                  Blog
                 </a>
                 <a
                   href="#testimonials"
@@ -474,13 +504,13 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             {[
               {
-                before: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=600&h=400&fit=crop",
-                after: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&h=400&fit=crop",
+                before: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop",
+                after: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&h=400&fit=crop",
                 title: "Kitchen Deep Clean"
               },
               {
-                before: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=600&h=400&fit=crop",
-                after: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&h=400&fit=crop",
+                before: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+                after: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&h=400&fit=crop",
                 title: "Living Room Refresh"
               }
             ].map((item, i) => (
@@ -559,8 +589,8 @@ export default function HomePage() {
               "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=400&h=400&fit=crop",
               "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop",
               "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1600573472591-6318f69d43e3?w=400&h=400&fit=crop"
+              "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400&h=400&fit=crop"
             ].map((img, i) => (
               <div
                 key={i}
