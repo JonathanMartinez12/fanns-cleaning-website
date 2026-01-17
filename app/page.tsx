@@ -227,6 +227,16 @@ export default function HomePage() {
       </nav>
       {/* HERO */}
       <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white py-32 overflow-hidden">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&h=1080&fit=crop"
+            alt="Professional cleaning service"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-700/90 via-blue-600/90 to-indigo-700/90"></div>
+        </div>
+
         {/* Animated decorative background pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl animate-blob"></div>
@@ -309,26 +319,29 @@ export default function HomePage() {
                 title: "Residential Cleaning",
                 desc: "Transform your home into a sparkling sanctuary with our thorough residential cleaning services.",
                 features: ["Routine Maintenance", "Deep Cleaning", "Move-In/Move-Out", "Custom Schedules"],
-                color: "from-blue-500 to-blue-600"
+                color: "from-blue-500 to-blue-600",
+                image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=400&fit=crop"
               },
               {
                 icon: "🏢",
                 title: "Commercial Cleaning",
                 desc: "Keep your business looking professional with our reliable commercial cleaning solutions.",
                 features: ["Office Spaces", "Retail Stores", "Medical Facilities", "After-Hours Service"],
-                color: "from-indigo-500 to-indigo-600"
+                color: "from-indigo-500 to-indigo-600",
+                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=400&fit=crop"
               },
               {
                 icon: "✨",
                 title: "Deep Cleaning",
                 desc: "Intensive cleaning that reaches every corner, perfect for seasonal refreshes or special occasions.",
                 features: ["Kitchen & Bathrooms", "Carpet Cleaning", "Window Washing", "Detailed Sanitization"],
-                color: "from-purple-500 to-purple-600"
+                color: "from-purple-500 to-purple-600",
+                image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&h=400&fit=crop"
               },
             ].map((service, i) => (
               <div
                 key={i}
-                className={`group relative bg-white border-2 border-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:border-blue-200 transition-all duration-500 ${
+                className={`group relative bg-white border-2 border-gray-100 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:border-blue-200 transition-all duration-500 ${
                   servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{
@@ -336,13 +349,20 @@ export default function HomePage() {
                   transform: servicesVisible ? 'translateY(0)' : 'translateY(40px)'
                 }}
               >
-                {/* Gradient overlay on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-300`}></div>
-
-                <div className="relative">
-                  <div className="text-5xl mb-6 inline-block group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
+                {/* Service Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-60 group-hover:opacity-40 transition-opacity`}></div>
+                  <div className="absolute top-4 right-4 text-5xl group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 drop-shadow-lg">
                     {service.icon}
                   </div>
+                </div>
+
+                <div className="relative p-8">
                   <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-600 transition-colors">
                     {service.title}
                   </h3>
@@ -432,6 +452,144 @@ export default function HomePage() {
                 We're not just cleaning homes and offices—we're building lasting relationships.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BEFORE & AFTER GALLERY */}
+      <section className="py-28 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+              SEE THE DIFFERENCE
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              Transformations That Speak
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              See the remarkable difference our professional cleaning makes
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            {[
+              {
+                before: "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=600&h=400&fit=crop",
+                after: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&h=400&fit=crop",
+                title: "Kitchen Deep Clean"
+              },
+              {
+                before: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=600&h=400&fit=crop",
+                after: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&h=400&fit=crop",
+                title: "Living Room Refresh"
+              }
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500"
+              >
+                <div className="relative h-80">
+                  {/* Before Image */}
+                  <div className="absolute inset-0 w-1/2 left-0">
+                    <img
+                      src={item.before}
+                      alt="Before cleaning"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm">
+                      Before
+                    </div>
+                  </div>
+
+                  {/* After Image */}
+                  <div className="absolute inset-0 w-1/2 right-0">
+                    <img
+                      src={item.after}
+                      alt="After cleaning"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm">
+                      After
+                    </div>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="absolute inset-y-0 left-1/2 w-1 bg-white shadow-lg transform -translate-x-1/2 z-10">
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center">
+                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-center group-hover:text-blue-600 transition-colors">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PHOTO GALLERY */}
+      <section className="py-28 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+              OUR WORK
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              Excellence in Every Detail
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              A glimpse into our professional cleaning services
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=400&h=400&fit=crop",
+              "https://images.unsplash.com/photo-1600573472591-6318f69d43e3?w=400&h=400&fit=crop"
+            ].map((img, i) => (
+              <div
+                key={i}
+                className="group relative aspect-square overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+              >
+                <img
+                  src={img}
+                  alt={`Cleaning service ${i + 1}`}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-white font-semibold text-sm">
+                      Professional Cleaning
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
+            >
+              See How We Can Help You
+              <span>→</span>
+            </a>
           </div>
         </div>
       </section>
