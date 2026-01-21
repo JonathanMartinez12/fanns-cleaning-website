@@ -502,7 +502,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { img: "/nice_kitchen.png", title: "Sparkling Clean Kitchen" },
               { img: "/bathroom.png", title: "Pristine Bathroom" },

@@ -239,26 +239,6 @@ export default function BlogPage() {
               </article>
             ))}
           </div>
-
-          {/* Newsletter Signup */}
-          <div className="mt-20 bg-gradient-to-br from-blue-600 to-indigo-900 rounded-3xl p-12 text-white text-center shadow-2xl">
-            <h3 className="text-4xl font-bold mb-4">
-              Get Cleaning Tips Delivered
-            </h3>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter for weekly cleaning tips, exclusive offers, and home care advice.
-            </p>
-            <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <button className="bg-white text-emerald-600 px-8 py-4 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300">
-                Subscribe
-              </button>
-            </div>
-          </div>
         </div>
       </section>
 
