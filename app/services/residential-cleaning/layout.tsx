@@ -76,7 +76,7 @@ export default function ResidentialCleaningLayout({
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
-      priceCurrency': 'USD'
+      priceCurrency: 'USD'
     }
   };
 
