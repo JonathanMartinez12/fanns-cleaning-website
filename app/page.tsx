@@ -146,7 +146,7 @@ export default function HomePage() {
             <div className="hidden lg:flex items-center gap-4">
               {/* Phone Button */}
               <a
-                href="tel:+15551234567"
+                href="tel:+13465880262"
                 className={`group flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 ${
                   isScrolled
                     ? 'bg-blue-50 text-blue-600 hover:bg-blue-100'
@@ -161,7 +161,7 @@ export default function HomePage() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="hidden xl:inline">(555) 123-4567</span>
+                <span className="hidden xl:inline">(346) 588-0262</span>
                 <span className="xl:hidden">Call</span>
               </a>
 
@@ -233,14 +233,14 @@ export default function HomePage() {
                 </a>
                 <div className="border-t pt-4 space-y-3">
                   <a
-                    href="tel:+15551234567"
+                    href="tel:+13465880262"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="flex items-center gap-2 bg-blue-50 text-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-100 transition-colors"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    (555) 123-4567
+                    (346) 588-0262
                   </a>
                   <a
                     href="#contact"
@@ -276,15 +276,15 @@ export default function HomePage() {
 
         <div className="relative max-w-6xl mx-auto px-6 text-center animate-fade-in">
           <div className="inline-block mb-4 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium animate-slide-down">
-            ✨ Premium Cleaning Services in Tomball, TX
+            ✨ Premium Cleaning Services Serving Tomball, Magnolia, The Woodlands & More
           </div>
           <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight tracking-tight animate-slide-up">
             Pristine Spaces.<br />
             <span className="text-blue-200 bg-clip-text">Exceptional Service.</span>
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed text-blue-50 animate-slide-up animation-delay-200">
-            Transform your home or business with our professional cleaning services.
-            Trusted by Tomball residents for spotless results every time.
+            Over 10 years of experience delivering spotless homes and offices in Tomball, Magnolia, and Montgomery County.
+            Pet-friendly products, transparent pricing, and personalized attention to every detail.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up animation-delay-400">
             <a
@@ -476,10 +476,10 @@ export default function HomePage() {
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
             </div>
             <div className="relative">
-              <h3 className="text-3xl font-bold mb-4">Proudly Serving Tomball, TX</h3>
+              <h3 className="text-3xl font-bold mb-4">Proudly Serving Montgomery County & Surrounding Areas</h3>
               <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-                As a locally owned business, we understand the unique needs of our community.
-                We're not just cleaning homes and offices—we're building lasting relationships.
+                Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX.
+                As a locally owned business, we're not just cleaning homes and offices—we're building lasting relationships.
               </p>
             </div>
           </div>
@@ -797,12 +797,12 @@ export default function HomePage() {
           <div className="mt-12 text-center animate-fade-in animation-delay-800">
             <p className="text-blue-100 mb-4">Or reach us directly:</p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-lg">
-              <a href="tel:+15551234567" className="flex items-center gap-2 hover:text-blue-200 hover:scale-110 transition-all">
-                📞 (555) 123-4567
+              <a href="tel:+13465880262" className="flex items-center gap-2 hover:text-blue-200 hover:scale-110 transition-all">
+                📞 (346) 588-0262
               </a>
               <span className="hidden sm:inline text-blue-300">•</span>
-              <a href="mailto:info@fannscleaning.com" className="flex items-center gap-2 hover:text-blue-200 hover:scale-110 transition-all">
-                ✉️ info@fannscleaning.com
+              <a href="mailto:fannsclean23@gmail.com" className="flex items-center gap-2 hover:text-blue-200 hover:scale-110 transition-all">
+                ✉️ fannsclean23@gmail.com
               </a>
             </div>
           </div>
@@ -817,7 +817,7 @@ export default function HomePage() {
             <div className="animate-fade-in">
               <h3 className="text-2xl font-bold text-white mb-4">Fann's Cleaning</h3>
               <p className="text-gray-400 leading-relaxed mb-4">
-                Professional cleaning services for homes and businesses in Tomball, TX.
+                Professional cleaning services for homes and businesses in Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX.
               </p>
               <div className="flex gap-4">
                 {['f', 'in', '✉'].map((icon, i) => (
@@ -857,15 +857,15 @@ export default function HomePage() {
               <ul className="space-y-3 text-gray-400">
                 <li className="flex items-start gap-2 hover:text-white transition-colors">
                   <span>📍</span>
-                  <span>Tomball, TX 77375</span>
+                  <span>Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span>📞</span>
-                  <a href="tel:+15551234567" className="hover:text-white transition-colors">(555) 123-4567</a>
+                  <a href="tel:+13465880262" className="hover:text-white transition-colors">(346) 588-0262</a>
                 </li>
                 <li className="flex items-center gap-2">
                   <span>✉️</span>
-                  <a href="mailto:info@fannscleaning.com" className="hover:text-white transition-colors">info@fannscleaning.com</a>
+                  <a href="mailto:fannsclean23@gmail.com" className="hover:text-white transition-colors">fannsclean23@gmail.com</a>
                 </li>
               </ul>
             </div>

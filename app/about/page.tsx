@@ -56,13 +56,13 @@ export default function AboutPage() {
             {/* Phone & CTA */}
             <div className="hidden lg:flex items-center gap-4">
               <a
-                href="tel:+15551234567"
+                href="tel:+13465880262"
                 className="group flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 bg-blue-50 text-blue-600 hover:bg-blue-100"
               >
                 <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="hidden xl:inline">(555) 123-4567</span>
+                <span className="hidden xl:inline">(346) 588-0262</span>
                 <span className="xl:hidden">Call</span>
               </a>
               <Link
@@ -130,7 +130,7 @@ export default function AboutPage() {
             About Fann's Cleaning
           </h1>
           <p className="text-2xl text-blue-100">
-            Your trusted local cleaning partner in Tomball, Texas
+            Your trusted local cleaning partner serving Montgomery County and surrounding areas
           </p>
         </div>
       </section>
@@ -144,16 +144,16 @@ export default function AboutPage() {
                 OUR STORY
               </div>
               <h2 className="text-5xl font-bold mb-6">
-                Cleaning with Heart Since 2014
+                Built on Trust, Driven by Excellence
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                Fann's Cleaning Services was founded with a simple mission: to provide exceptional cleaning services that transform spaces and enhance lives.
+                Fann's Cleaning Services was founded by Courtney Gordy to deliver top-quality cleaning with professionalism and attention to detail.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                What started as a small local operation has grown into Tomball's most trusted cleaning service, thanks to our commitment to quality, reliability, and customer satisfaction.
+                With over a decade of industry experience and a dedicated team of 6-10 professionals, we've built lasting relationships across Tomball, Magnolia, and Montgomery County.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Every member of our team is trained, background-checked, and dedicated to delivering the pristine results you deserve.
+                We believe in transparency, exceptional service, and using only the best equipment and supplies. Our goal is simple: to create clean, fresh, revitalizing environments that you're proud to call home or workspace.
               </p>
             </div>
             <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
@@ -235,7 +235,7 @@ export default function AboutPage() {
             {[
               { number: "500+", label: "Happy Clients" },
               { number: "10+", label: "Years Experience" },
-              { number: "15", label: "Team Members" },
+              { number: "6-10", label: "Team Professionals" },
               { number: "100%", label: "Satisfaction Rate" }
             ].map((stat, i) => (
               <div key={i} className="text-center">
@@ -254,7 +254,7 @@ export default function AboutPage() {
             Ready to Experience the Difference?
           </h2>
           <p className="text-xl text-gray-600 mb-10">
-            Join hundreds of satisfied customers in Tomball who trust us with their cleaning needs.
+            Join hundreds of satisfied customers across Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst who trust us with their cleaning needs.
           </p>
           <Link
             href="/#contact"
@@ -273,7 +273,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-4">Fann's Cleaning</h3>
               <p className="text-gray-400 leading-relaxed mb-4">
-                Professional cleaning services for homes and businesses in Tomball, TX.
+                Professional cleaning services for homes and businesses in Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX.
               </p>
             </div>
             <div>
@@ -290,15 +290,15 @@ export default function AboutPage() {
               <ul className="space-y-3 text-gray-400">
                 <li className="flex items-start gap-2">
                   <span>📍</span>
-                  <span>Tomball, TX 77375</span>
+                  <span>Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span>📞</span>
-                  <a href="tel:+15551234567" className="hover:text-white transition">(555) 123-4567</a>
+                  <a href="tel:+13465880262" className="hover:text-white transition">(346) 588-0262</a>
                 </li>
                 <li className="flex items-center gap-2">
                   <span>✉️</span>
-                  <a href="mailto:info@fannscleaning.com" className="hover:text-white transition">info@fannscleaning.com</a>
+                  <a href="mailto:fannsclean23@gmail.com" className="hover:text-white transition">fannsclean23@gmail.com</a>
                 </li>
               </ul>
             </div>

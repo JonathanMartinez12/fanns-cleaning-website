@@ -104,13 +104,13 @@ export default function BlogPage() {
 
             <div className="hidden lg:flex items-center gap-4">
               <a
-                href="tel:+15551234567"
+                href="tel:+13465880262"
                 className="group flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 bg-blue-50 text-blue-600 hover:bg-blue-100"
               >
                 <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="hidden xl:inline">(555) 123-4567</span>
+                <span className="hidden xl:inline">(346) 588-0262</span>
                 <span className="xl:hidden">Call</span>
               </a>
               <Link
@@ -265,7 +265,7 @@ export default function BlogPage() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-4">Fann's Cleaning</h3>
               <p className="text-gray-400 leading-relaxed mb-4">
-                Professional cleaning services for homes and businesses in Tomball, TX.
+                Professional cleaning services for homes and businesses in Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX.
               </p>
             </div>
             <div>
@@ -282,15 +282,15 @@ export default function BlogPage() {
               <ul className="space-y-3 text-gray-400">
                 <li className="flex items-start gap-2">
                   <span>📍</span>
-                  <span>Tomball, TX 77375</span>
+                  <span>Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span>📞</span>
-                  <a href="tel:+15551234567" className="hover:text-white transition">(555) 123-4567</a>
+                  <a href="tel:+13465880262" className="hover:text-white transition">(346) 588-0262</a>
                 </li>
                 <li className="flex items-center gap-2">
                   <span>✉️</span>
-                  <a href="mailto:info@fannscleaning.com" className="hover:text-white transition">info@fannscleaning.com</a>
+                  <a href="mailto:fannsclean23@gmail.com" className="hover:text-white transition">fannsclean23@gmail.com</a>
                 </li>
               </ul>
             </div>
