@@ -263,7 +263,7 @@ export default function HomePage() {
         {/* Hero Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&h=1080&fit=crop"
+            src="/livingroom.png"
             alt="Professional cleaning service"
             className="w-full h-full object-cover opacity-20"
           />
@@ -335,7 +335,7 @@ export default function HomePage() {
                 desc: "Transform your home into a sparkling sanctuary with our thorough residential cleaning services.",
                 features: ["Routine Maintenance", "Deep Cleaning", "Move-In/Move-Out", "Custom Schedules"],
                 color: "from-blue-700 to-indigo-800",
-                image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=400&fit=crop"
+                image: "/livingroom.png"
               },
               {
                 icon: "building",
@@ -343,7 +343,7 @@ export default function HomePage() {
                 desc: "Keep your business looking professional with our reliable commercial cleaning solutions.",
                 features: ["Office Spaces", "Retail Stores", "Medical Facilities", "After-Hours Service"],
                 color: "from-slate-600 to-slate-700",
-                image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=400&fit=crop"
+                image: "/post_construction.png"
               },
               {
                 icon: "sparkles",
@@ -351,7 +351,7 @@ export default function HomePage() {
                 desc: "Intensive cleaning that reaches every corner, perfect for seasonal refreshes or special occasions.",
                 features: ["Kitchen & Bathrooms", "Carpet Cleaning", "Window Washing", "Detailed Sanitization"],
                 color: "from-teal-500 to-cyan-600",
-                image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&h=400&fit=crop"
+                image: "/nice_kitchen.png"
               },
             ].map((service, i) => (
               <div
@@ -506,13 +506,13 @@ export default function HomePage() {
             {[
               {
                 before: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop",
-                after: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&h=400&fit=crop",
-                title: "Kitchen Deep Clean"
+                after: "/nice_kitchen.png",
+                title: "Kitchen Transformation"
               },
               {
                 before: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-                after: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&h=400&fit=crop",
-                title: "Living Room Refresh"
+                after: "/livingroom_2.png",
+                title: "Living Room Makeover"
               }
             ].map((item, i) => (
               <div
@@ -584,31 +584,36 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=400&fit=crop",
-              "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400&h=400&fit=crop"
-            ].map((img, i) => (
+              { img: "/nice_kitchen.png", title: "Sparkling Clean Kitchen" },
+              { img: "/bathroom.png", title: "Pristine Bathroom" },
+              { img: "/livingroom.png", title: "Fresh Living Space" },
+              { img: "/post_construction.png", title: "Post-Construction Clean" },
+              { img: "/livingroom_2.png", title: "Spotless Living Room" },
+              { img: "/nice_kitchen.png", title: "Kitchen Deep Clean" },
+              { img: "/bathroom.png", title: "Bathroom Shine" },
+              { img: "/livingroom.png", title: "Living Area Refresh" }
+            ].map((item, i) => (
               <div
                 key={i}
                 className="group relative aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-lg transition-all duration-500 cursor-pointer"
               >
                 <img
-                  src={img}
-                  alt={`Cleaning service ${i + 1}`}
+                  src={item.img}
+                  alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-800/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2">
-                    <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <p className="text-white font-medium text-sm">
-                      Professional Cleaning
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <p className="text-white font-semibold text-sm">
+                        {item.title}
+                      </p>
+                    </div>
+                    <p className="text-slate-300 text-xs">
+                      Professional cleaning by Fann's
                     </p>
                   </div>
                 </div>
