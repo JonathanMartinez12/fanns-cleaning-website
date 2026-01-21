@@ -92,7 +92,7 @@ export default function HomePage() {
             <a href="#" className="flex items-center gap-3 group">
               <div className={`w-10 h-10 rounded-lg transition-all duration-300 flex items-center justify-center ${
                 isScrolled
-                  ? 'bg-gradient-to-br from-emerald-500 to-teal-600'
+                  ? 'bg-gradient-to-br from-blue-700 to-indigo-800'
                   : 'bg-white/20 backdrop-blur-sm'
               }`}>
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,7 +111,7 @@ export default function HomePage() {
               <a
                 href="#services"
                 className={`font-medium hover:scale-105 transition-all ${
-                  isScrolled ? 'text-gray-600 hover:text-emerald-600' : 'text-white/90 hover:text-white'
+                  isScrolled ? 'text-gray-600 hover:text-blue-700' : 'text-white/90 hover:text-white'
                 }`}
               >
                 Services
@@ -119,7 +119,7 @@ export default function HomePage() {
               <a
                 href="/about"
                 className={`font-medium hover:scale-105 transition-all ${
-                  isScrolled ? 'text-gray-600 hover:text-emerald-600' : 'text-white/90 hover:text-white'
+                  isScrolled ? 'text-gray-600 hover:text-blue-700' : 'text-white/90 hover:text-white'
                 }`}
               >
                 About
@@ -127,7 +127,7 @@ export default function HomePage() {
               <a
                 href="/blog"
                 className={`font-medium hover:scale-105 transition-all ${
-                  isScrolled ? 'text-gray-600 hover:text-emerald-600' : 'text-white/90 hover:text-white'
+                  isScrolled ? 'text-gray-600 hover:text-blue-700' : 'text-white/90 hover:text-white'
                 }`}
               >
                 Blog
@@ -135,7 +135,7 @@ export default function HomePage() {
               <a
                 href="#testimonials"
                 className={`font-medium hover:scale-105 transition-all ${
-                  isScrolled ? 'text-gray-600 hover:text-emerald-600' : 'text-white/90 hover:text-white'
+                  isScrolled ? 'text-gray-600 hover:text-blue-700' : 'text-white/90 hover:text-white'
                 }`}
               >
                 Testimonials
@@ -143,7 +143,7 @@ export default function HomePage() {
               <a
                 href="#contact"
                 className={`font-medium hover:scale-105 transition-all ${
-                  isScrolled ? 'text-gray-600 hover:text-emerald-600' : 'text-white/90 hover:text-white'
+                  isScrolled ? 'text-gray-600 hover:text-blue-700' : 'text-white/90 hover:text-white'
                 }`}
               >
                 Contact
@@ -157,7 +157,7 @@ export default function HomePage() {
                 href="tel:+13465880262"
                 className={`group flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all duration-300 ${
                   isScrolled
-                    ? 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
+                    ? 'bg-blue-50 text-blue-800 hover:bg-blue-100'
                     : 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-md border border-white/20'
                 }`}
               >
@@ -176,7 +176,7 @@ export default function HomePage() {
               {/* Get Quote CTA */}
               <a
                 href="#contact"
-                className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-2.5 rounded-lg font-medium hover:shadow-lg hover:shadow-emerald-500/25 hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-blue-800 to-indigo-800 text-white px-6 py-2.5 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-700/25 hover:scale-105 transition-all duration-300"
               >
                 Get Free Quote
               </a>
@@ -207,35 +207,35 @@ export default function HomePage() {
                 <a
                   href="#services"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-slate-700 font-medium hover:text-emerald-600 hover:translate-x-2 transition-all py-2"
+                  className="text-slate-700 font-medium hover:text-blue-700 hover:translate-x-2 transition-all py-2"
                 >
                   Services
                 </a>
                 <a
                   href="/about"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-slate-700 font-medium hover:text-emerald-600 hover:translate-x-2 transition-all py-2"
+                  className="text-slate-700 font-medium hover:text-blue-700 hover:translate-x-2 transition-all py-2"
                 >
                   About
                 </a>
                 <a
                   href="/blog"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-slate-700 font-medium hover:text-emerald-600 hover:translate-x-2 transition-all py-2"
+                  className="text-slate-700 font-medium hover:text-blue-700 hover:translate-x-2 transition-all py-2"
                 >
                   Blog
                 </a>
                 <a
                   href="#testimonials"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-slate-700 font-medium hover:text-emerald-600 hover:translate-x-2 transition-all py-2"
+                  className="text-slate-700 font-medium hover:text-blue-700 hover:translate-x-2 transition-all py-2"
                 >
                   Testimonials
                 </a>
                 <a
                   href="#contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-slate-700 font-medium hover:text-emerald-600 hover:translate-x-2 transition-all py-2"
+                  className="text-slate-700 font-medium hover:text-blue-700 hover:translate-x-2 transition-all py-2"
                 >
                   Contact
                 </a>
@@ -243,7 +243,7 @@ export default function HomePage() {
                   <a
                     href="tel:+13465880262"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-6 py-3 rounded-lg font-medium hover:bg-emerald-100 transition-colors"
+                    className="flex items-center gap-2 bg-blue-50 text-blue-800 px-6 py-3 rounded-lg font-medium hover:bg-blue-100 transition-colors"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -253,7 +253,7 @@ export default function HomePage() {
                   <a
                     href="#contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all"
+                    className="block text-center bg-gradient-to-r from-blue-800 to-indigo-800 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all"
                   >
                     Get Free Quote
                   </a>
@@ -264,7 +264,7 @@ export default function HomePage() {
         </div>
       </nav>
       {/* HERO */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-800 via-slate-800 to-slate-900 text-white py-32 overflow-hidden">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
           <img
@@ -272,7 +272,7 @@ export default function HomePage() {
             alt="Professional cleaning service"
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-emerald-900/95"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-800/95 via-slate-800/95 to-slate-900/95"></div>
         </div>
 
         {/* Animated decorative background pattern */}
@@ -283,8 +283,8 @@ export default function HomePage() {
         </div>
 
         <div className="relative max-w-6xl mx-auto px-6 text-center animate-fade-in">
-          <div className="inline-block mb-6 px-5 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full text-sm font-medium animate-slide-down border border-emerald-400/30">
-            <span className="text-emerald-300">Premium Cleaning Services</span>
+          <div className="inline-block mb-6 px-5 py-2 bg-blue-500/20 backdrop-blur-sm rounded-full text-sm font-medium animate-slide-down border border-blue-400/30">
+            <span className="text-blue-300">Premium Cleaning Services</span>
             <span className="text-white/60 mx-2">•</span>
             <span className="text-white/90">Montgomery County & Surrounding Areas</span>
           </div>
@@ -299,7 +299,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up animation-delay-400">
             <a
               href="#contact"
-              className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold px-8 py-4 rounded-lg shadow-xl shadow-emerald-500/25 hover:shadow-2xl hover:shadow-emerald-500/40 hover:scale-105 transition-all duration-300"
+              className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-blue-700 to-indigo-800 text-white font-semibold px-8 py-4 rounded-lg shadow-xl shadow-blue-700/25 hover:shadow-2xl hover:shadow-blue-700/40 hover:scale-105 transition-all duration-300"
             >
               <span className="relative">Get Your Free Quote</span>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -342,7 +342,7 @@ export default function HomePage() {
       <section id="services" className="py-28 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <div className="inline-block px-5 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium mb-4 animate-fade-in border border-emerald-100">
+            <div className="inline-block px-5 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-medium mb-4 animate-fade-in border border-blue-100">
               Our Services
             </div>
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
@@ -360,7 +360,7 @@ export default function HomePage() {
                 title: "Residential Cleaning",
                 desc: "Transform your home into a sparkling sanctuary with our thorough residential cleaning services.",
                 features: ["Routine Maintenance", "Deep Cleaning", "Move-In/Move-Out", "Custom Schedules"],
-                color: "from-emerald-500 to-teal-600",
+                color: "from-blue-700 to-indigo-800",
                 image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=400&fit=crop"
               },
               {
@@ -382,7 +382,7 @@ export default function HomePage() {
             ].map((service, i) => (
               <div
                 key={i}
-                className={`group relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-500 ${
+                className={`group relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-blue-100/50 transition-all duration-500 ${
                   servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{
@@ -418,21 +418,21 @@ export default function HomePage() {
                 </div>
 
                 <div className="relative p-8">
-                  <h3 className="text-2xl font-bold mb-4 text-slate-900 group-hover:text-emerald-600 transition-colors">
+                  <h3 className="text-2xl font-bold mb-4 text-slate-900 group-hover:text-blue-700 transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-slate-600 mb-6 leading-relaxed">{service.desc}</p>
                   <ul className="space-y-3 mb-8">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-3 text-sm text-slate-700 group-hover:translate-x-1 transition-transform" style={{ transitionDelay: `${idx * 50}ms` }}>
-                        <svg className="w-5 h-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <a href="#contact" className="inline-flex items-center text-emerald-600 font-semibold hover:text-emerald-700 group-hover:gap-2 transition-all">
+                  <a href="#contact" className="inline-flex items-center text-blue-700 font-semibold hover:text-blue-800 group-hover:gap-2 transition-all">
                     Learn More
                     <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -487,16 +487,16 @@ export default function HomePage() {
                 }`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-emerald-500/25">
+                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-700 to-indigo-800 rounded-xl flex items-center justify-center text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-blue-700/25">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-emerald-600 transition-colors">{item.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-blue-700 transition-colors">{item.title}</h3>
                 <p className="text-slate-600">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className={`mt-20 bg-gradient-to-br from-slate-800 to-emerald-900 rounded-2xl p-12 text-white text-center shadow-xl relative overflow-hidden transition-all duration-700 ${
+          <div className={`mt-20 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-12 text-white text-center shadow-xl relative overflow-hidden transition-all duration-700 ${
             whyUsVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}>
             {/* Animated background pattern */}
@@ -508,7 +508,7 @@ export default function HomePage() {
               <h3 className="text-3xl font-bold mb-4">Proudly Serving Montgomery County & Surrounding Areas</h3>
               <p className="text-xl text-slate-200 max-w-2xl mx-auto">
                 Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX.
-                <span className="block mt-2 text-lg text-emerald-300">As a locally owned business, we're not just cleaning homes and offices—we're building lasting relationships.</span>
+                <span className="block mt-2 text-lg text-blue-300">As a locally owned business, we're not just cleaning homes and offices—we're building lasting relationships.</span>
               </p>
             </div>
           </div>
@@ -519,7 +519,7 @@ export default function HomePage() {
       <section className="py-28 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <div className="inline-block px-5 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium mb-4 border border-emerald-100">
+            <div className="inline-block px-5 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-medium mb-4 border border-blue-100">
               Before & After
             </div>
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
@@ -599,7 +599,7 @@ export default function HomePage() {
       <section className="py-28 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <div className="inline-block px-5 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium mb-4 border border-emerald-100">
+            <div className="inline-block px-5 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-medium mb-4 border border-blue-100">
               Our Work
             </div>
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
@@ -630,9 +630,9 @@ export default function HomePage() {
                   alt={`Cleaning service ${i + 1}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-800/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2">
-                    <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <p className="text-white font-medium text-sm">
@@ -647,7 +647,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:shadow-emerald-500/25 hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-800 to-indigo-800 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:shadow-blue-700/25 hover:scale-105 transition-all duration-300"
             >
               See How We Can Help You
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -658,80 +658,190 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section id="testimonials" className="py-28 bg-gray-50 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* TESTIMONIALS - Auto-Scrolling Reviews */}
+      <section id="testimonials" className="py-28 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block px-5 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium mb-4 border border-emerald-100">
-              Testimonials
+            <div className="inline-block px-5 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-medium mb-4 border border-blue-100">
+              Client Testimonials
             </div>
             <h2 className="text-5xl font-bold mb-6 text-slate-900">
-              What Our Clients Say
+              Trusted by Hundreds of Happy Customers
             </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Don't just take our word for it—see what our clients have to say
+            </p>
           </div>
 
-          <div ref={testimonialsRef} className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sarah Johnson",
-                role: "Homeowner",
-                text: "Fann's Cleaning transformed my home! Their attention to detail is unmatched. I've tried other services, but nothing compares.",
-                rating: 5
-              },
-              {
-                name: "Michael Chen",
-                role: "Business Owner",
-                text: "Professional, reliable, and thorough. They keep our office spotless and our team loves coming to work in such a clean environment.",
-                rating: 5
-              },
-              {
-                name: "Jennifer Williams",
-                role: "Property Manager",
-                text: "I recommend Fann's to all my tenants. They're consistently excellent and make move-in/move-out cleanings stress-free.",
-                rating: 5
-              }
-            ].map((testimonial, i) => (
-              <div
-                key={i}
-                className={`bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-500 hover:-translate-y-1 ${
-                  testimonialsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-                }`}
-                style={{
-                  transitionDelay: `${i * 150}ms`
-                }}
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, idx) => (
-                    <svg
-                      key={idx}
-                      className="w-5 h-5 text-emerald-500"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-slate-700 mb-6 leading-relaxed">
-                  "{testimonial.text}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-xl shadow-md">
-                    {testimonial.name[0]}
+          {/* Scrolling testimonials container */}
+          <div className="relative">
+            {/* Gradient overlays for fade effect */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white via-white to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white via-white to-transparent z-10"></div>
+
+            <div className="overflow-hidden">
+              <div className="flex animate-scroll">
+                {/* First set of reviews */}
+                {[
+                  {
+                    name: "Michael M.",
+                    text: "Needed a last minute clean of the house before the holidays. Kevin and his team made it quick and painless. The house was absolutely spotless. 10/10 recommended"
+                  },
+                  {
+                    name: "Stephanie W.",
+                    text: "Today, two ladies came and organized two rooms in my home, and I couldn't be more pleased! One was hazardous to walk in, and I am so grateful for them! Thanks for always being available and sharing your gifts!!"
+                  },
+                  {
+                    name: "Jake L.",
+                    text: "These guys came in clutch, on a last minute cleaning after our prescheduled contractor stood us up, and ghosted us. Fann's came in, on time, did an absolute stellar job, and left. I absolutely recommend, and will be using their services again."
+                  },
+                  {
+                    name: "Jacy S.",
+                    text: "Very impressed with the job that was done on my house! They paid attention to all the details and got everything spotless!"
+                  },
+                  {
+                    name: "Cristina E.",
+                    text: "They have always done a great job cleaning my home. I appreciate their services."
+                  },
+                  {
+                    name: "Susan F.",
+                    text: "I called to hire Fann's for a deep clean of my house. I have 3 hairy dogs and a lot of dust, etc. They came within days and cleaned absolutely everything. My house is like brand new. I will definitely be hiring them long term!! Thank you so very much"
+                  },
+                  {
+                    name: "Summer P.",
+                    text: "We needed a deep clean of our house on short notice. They didn't hesitate to fit us in the day we needed it. They did an amazing job. Very accommodating to our specific needs. Our house looks new again. Highly recommend them!"
+                  },
+                  {
+                    name: "Rayne L.",
+                    text: "I had a deep cleaning done. They took their time and literally cleaned my house from top to bottom including my wall decor. I have tried other cleaning services and those people did not clean my house to my expectations. Fann Cleaning Service exceeded my expectations. The cleaners were very friendly and personable, and professional."
+                  },
+                  {
+                    name: "Vickie M.",
+                    text: "Fann's Cleaning Service is outstanding in every way. Not only are they professional but also pay attention to detail. They bring their own supplies, equipment and plenty of elbow grease. They came out and gave us an estimate and were on time. They are honest and extremely trustworthy. We will definitely use their services again."
+                  },
+                  {
+                    name: "Barbara W.",
+                    text: "I have been very happy with Fann's Cleaning Services since I started using them earlier this year. Great quality work and very dependable. Friendly and easy to work with."
+                  }
+                ].map((review, i) => (
+                  <div
+                    key={`first-${i}`}
+                    className="flex-shrink-0 w-96 mx-4 bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-slate-200 transition-all duration-300"
+                  >
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(5)].map((_, idx) => (
+                        <svg
+                          key={idx}
+                          className="w-5 h-5 text-amber-400"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-slate-700 mb-6 leading-relaxed text-[15px]">
+                      "{review.text}"
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-700 to-indigo-800 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+                        {review.name[0]}
+                      </div>
+                      <div>
+                        <div className="font-bold text-slate-900">{review.name}</div>
+                        <div className="text-sm text-slate-500">Verified Customer</div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="font-bold text-slate-900">{testimonial.name}</div>
-                    <div className="text-sm text-slate-500">{testimonial.role}</div>
+                ))}
+
+                {/* Duplicate set for seamless loop */}
+                {[
+                  {
+                    name: "Michael M.",
+                    text: "Needed a last minute clean of the house before the holidays. Kevin and his team made it quick and painless. The house was absolutely spotless. 10/10 recommended"
+                  },
+                  {
+                    name: "Stephanie W.",
+                    text: "Today, two ladies came and organized two rooms in my home, and I couldn't be more pleased! One was hazardous to walk in, and I am so grateful for them! Thanks for always being available and sharing your gifts!!"
+                  },
+                  {
+                    name: "Jake L.",
+                    text: "These guys came in clutch, on a last minute cleaning after our prescheduled contractor stood us up, and ghosted us. Fann's came in, on time, did an absolute stellar job, and left. I absolutely recommend, and will be using their services again."
+                  },
+                  {
+                    name: "Jacy S.",
+                    text: "Very impressed with the job that was done on my house! They paid attention to all the details and got everything spotless!"
+                  },
+                  {
+                    name: "Cristina E.",
+                    text: "They have always done a great job cleaning my home. I appreciate their services."
+                  },
+                  {
+                    name: "Susan F.",
+                    text: "I called to hire Fann's for a deep clean of my house. I have 3 hairy dogs and a lot of dust, etc. They came within days and cleaned absolutely everything. My house is like brand new. I will definitely be hiring them long term!! Thank you so very much"
+                  },
+                  {
+                    name: "Summer P.",
+                    text: "We needed a deep clean of our house on short notice. They didn't hesitate to fit us in the day we needed it. They did an amazing job. Very accommodating to our specific needs. Our house looks new again. Highly recommend them!"
+                  },
+                  {
+                    name: "Rayne L.",
+                    text: "I had a deep cleaning done. They took their time and literally cleaned my house from top to bottom including my wall decor. I have tried other cleaning services and those people did not clean my house to my expectations. Fann Cleaning Service exceeded my expectations. The cleaners were very friendly and personable, and professional."
+                  },
+                  {
+                    name: "Vickie M.",
+                    text: "Fann's Cleaning Service is outstanding in every way. Not only are they professional but also pay attention to detail. They bring their own supplies, equipment and plenty of elbow grease. They came out and gave us an estimate and were on time. They are honest and extremely trustworthy. We will definitely use their services again."
+                  },
+                  {
+                    name: "Barbara W.",
+                    text: "I have been very happy with Fann's Cleaning Services since I started using them earlier this year. Great quality work and very dependable. Friendly and easy to work with."
+                  }
+                ].map((review, i) => (
+                  <div
+                    key={`second-${i}`}
+                    className="flex-shrink-0 w-96 mx-4 bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-slate-200 transition-all duration-300"
+                  >
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(5)].map((_, idx) => (
+                        <svg
+                          key={idx}
+                          className="w-5 h-5 text-amber-400"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-slate-700 mb-6 leading-relaxed text-[15px]">
+                      "{review.text}"
+                    </p>
+                    <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-700 to-indigo-800 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+                        {review.name[0]}
+                      </div>
+                      <div>
+                        <div className="font-bold text-slate-900">{review.name}</div>
+                        <div className="text-sm text-slate-500">Verified Customer</div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-slate-600 text-sm">
+              <span className="font-semibold text-slate-900">500+ Five-Star Reviews</span> • Hover to pause
+            </p>
           </div>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white relative overflow-hidden">
+      <section id="contact" className="py-28 bg-gradient-to-br from-slate-800 via-slate-800 to-slate-900 text-white relative overflow-hidden">
         {/* Decorative elements with animation */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-10 w-72 h-72 bg-white rounded-full blur-3xl animate-blob"></div>
@@ -740,8 +850,8 @@ export default function HomePage() {
 
         <div className="relative max-w-4xl mx-auto px-6">
           <div className="text-center mb-12 animate-fade-in">
-            <div className="inline-block px-5 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4 border border-emerald-400/30">
-              <span className="text-emerald-300">Get In Touch</span>
+            <div className="inline-block px-5 py-2 bg-blue-500/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4 border border-blue-400/30">
+              <span className="text-blue-300">Get In Touch</span>
             </div>
             <h2 className="text-5xl font-bold mb-6">
               Ready for a Spotless Space?
@@ -816,7 +926,7 @@ export default function HomePage() {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-5 rounded-lg font-semibold text-lg shadow-xl shadow-emerald-500/25 hover:shadow-2xl hover:shadow-emerald-500/40 hover:scale-105 transition-all duration-300 relative overflow-hidden group animate-slide-up animation-delay-600"
+                className="w-full bg-gradient-to-r from-blue-800 to-indigo-800 text-white py-5 rounded-lg font-semibold text-lg shadow-xl shadow-blue-700/25 hover:shadow-2xl hover:shadow-blue-700/40 hover:scale-105 transition-all duration-300 relative overflow-hidden group animate-slide-up animation-delay-600"
               >
                 <span className="relative flex items-center justify-center gap-2">
                   Get Your Free Quote
@@ -836,14 +946,14 @@ export default function HomePage() {
           <div className="mt-12 text-center animate-fade-in animation-delay-800">
             <p className="text-slate-300 mb-4">Or reach us directly:</p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-lg">
-              <a href="tel:+13465880262" className="flex items-center gap-2 text-white hover:text-emerald-300 hover:scale-105 transition-all">
+              <a href="tel:+13465880262" className="flex items-center gap-2 text-white hover:text-blue-300 hover:scale-105 transition-all">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 (346) 588-0262
               </a>
               <span className="hidden sm:inline text-slate-600">•</span>
-              <a href="mailto:fannsclean23@gmail.com" className="flex items-center gap-2 text-white hover:text-emerald-300 hover:scale-105 transition-all">
+              <a href="mailto:fannsclean23@gmail.com" className="flex items-center gap-2 text-white hover:text-blue-300 hover:scale-105 transition-all">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -861,7 +971,7 @@ export default function HomePage() {
             {/* Company Info */}
             <div className="animate-fade-in">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-700 to-indigo-800 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -884,7 +994,7 @@ export default function HomePage() {
                   { text: "Blog", href: "/blog" }
                 ].map((link, i) => (
                   <li key={i}>
-                    <a href={link.href} className="text-slate-400 hover:text-emerald-400 hover:translate-x-1 inline-block transition-all flex items-center gap-2">
+                    <a href={link.href} className="text-slate-400 hover:text-blue-400 hover:translate-x-1 inline-block transition-all flex items-center gap-2">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
@@ -899,24 +1009,24 @@ export default function HomePage() {
             <div className="animate-fade-in animation-delay-400">
               <h4 className="text-lg font-bold text-white mb-4">Contact Us</h4>
               <ul className="space-y-3 text-slate-400">
-                <li className="flex items-start gap-3 hover:text-emerald-400 transition-colors">
-                  <svg className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <li className="flex items-start gap-3 hover:text-blue-400 transition-colors">
+                  <svg className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <span>Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  <a href="tel:+13465880262" className="hover:text-emerald-400 transition-colors">(346) 588-0262</a>
+                  <a href="tel:+13465880262" className="hover:text-blue-400 transition-colors">(346) 588-0262</a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  <a href="mailto:fannsclean23@gmail.com" className="hover:text-emerald-400 transition-colors">fannsclean23@gmail.com</a>
+                  <a href="mailto:fannsclean23@gmail.com" className="hover:text-blue-400 transition-colors">fannsclean23@gmail.com</a>
                 </li>
               </ul>
             </div>
@@ -930,7 +1040,7 @@ export default function HomePage() {
                 href="https://nola-web-development.web.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-emerald-400 hover:text-emerald-300 transition-all hover:underline"
+                className="text-blue-400 hover:text-blue-300 transition-all hover:underline"
               >
                 NOLA Web Development
               </a>

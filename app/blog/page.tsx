@@ -78,7 +78,7 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-teal-600 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
@@ -119,7 +119,7 @@ export default function BlogPage() {
               </a>
               <Link
                 href="/#contact"
-                className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
                 Get Free Quote
               </Link>
@@ -165,14 +165,14 @@ export default function BlogPage() {
       </nav>
 
       {/* HERO */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white py-40 mt-20">
+      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-white py-40 mt-20">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920&h=600&fit=crop"
             alt="Blog"
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-emerald-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-indigo-900/90"></div>
         </div>
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
@@ -241,7 +241,7 @@ export default function BlogPage() {
           </div>
 
           {/* Newsletter Signup */}
-          <div className="mt-20 bg-gradient-to-br from-emerald-600 to-emerald-900 rounded-3xl p-12 text-white text-center shadow-2xl">
+          <div className="mt-20 bg-gradient-to-br from-blue-600 to-indigo-900 rounded-3xl p-12 text-white text-center shadow-2xl">
             <h3 className="text-4xl font-bold mb-4">
               Get Cleaning Tips Delivered
             </h3>
