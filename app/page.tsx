@@ -518,7 +518,6 @@ export default function HomePage() {
               { img: "/commercial_cleaning.png", title: "Commercial Space Cleaning" },
               { img: "/deep_cleaning.png", title: "Deep Cleaning Service" },
               { img: "/livingroom_3.png", title: "Living Room Refresh" },
-              { img: "/new_construction_cleaning.png", title: "New Construction Cleaning" },
               { img: "/window_cleaning.png", title: "Window Cleaning Service" }
             ].map((item, i) => (
               <div
