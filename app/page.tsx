@@ -347,11 +347,11 @@ export default function HomePage() {
               },
               {
                 icon: "sparkles",
-                title: "Post-Construction & Gutter Cleaning",
-                desc: "Specialized post-construction cleaning to remove dust and debris. Professional gutter cleaning to protect your home from water damage and keep drainage flowing.",
-                features: ["Construction Debris Removal", "Dust Elimination", "Gutter Cleaning", "Drainage Protection", "Water Damage Prevention"],
+                title: "Specialized Commercial Cleaning",
+                desc: "Professional office and business cleaning tailored to your workplace needs. Keep your commercial space spotless with our reliable after-hours service and attention to detail.",
+                features: ["Office Spaces", "Retail Stores", "Medical Facilities", "After-Hours Service", "Professional Environment Care"],
                 color: "from-teal-500 to-cyan-600",
-                image: "/new_construction_cleaning.png"
+                image: "/commercial_cleaning.png"
               },
             ].map((service, i) => (
               <div
