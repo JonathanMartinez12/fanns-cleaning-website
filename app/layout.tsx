@@ -137,8 +137,10 @@ export default function RootLayout({
       }
     ],
     sameAs: [
-      'https://www.facebook.com/fannscleaningservices',
-      'https://www.instagram.com/fannscleaningservices'
+      'https://www.facebook.com/kfannscleaningservices',
+      'https://www.instagram.com/fannscleaningservices/',
+      'https://x.com/CleaningFann',
+      'https://www.youtube.com/@fannscleaningservices4308'
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
