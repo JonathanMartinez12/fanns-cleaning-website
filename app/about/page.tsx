@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutPage() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -121,10 +122,13 @@ export default function AboutPage() {
       {/* HERO */}
       <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white py-40 mt-20">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=600&fit=crop"
             alt="About Fann's Cleaning"
-            className="w-full h-full object-cover opacity-20"
+            fill
+            className="object-cover opacity-20"
+            priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-emerald-900/90"></div>
         </div>
@@ -161,10 +165,12 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&h=600&fit=crop"
                 alt="Our team"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 
 // Custom hook for scroll-triggered animations
 function useScrollAnimation() {
@@ -262,10 +263,13 @@ export default function HomePage() {
       <section className="relative bg-gradient-to-br from-slate-800 via-slate-800 to-slate-900 text-white py-32 overflow-hidden">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/livingroom.png"
             alt="Professional cleaning service"
-            className="w-full h-full object-cover opacity-20"
+            fill
+            className="object-cover opacity-20"
+            priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-800/95 via-slate-800/95 to-slate-900/95"></div>
         </div>
@@ -331,8 +335,8 @@ export default function HomePage() {
             {[
               {
                 icon: "home",
-                title: "Residential & Commercial Cleaning",
-                desc: "Routine home and office cleaning, deep-cleaning, upholstery, and floors. Flexible scheduling with weekly or one-time options to fit your lifestyle.",
+                title: "Residential Cleaning",
+                desc: "Transform your home into a sparkling sanctuary with routine maintenance, deep-cleaning, upholstery, and floor care. Flexible scheduling with weekly or one-time options to fit your lifestyle.",
                 features: ["Routine Maintenance", "Deep Cleaning", "Upholstery Cleaning", "Floor Care", "Weekly or One-Time Options"],
                 color: "from-blue-700 to-indigo-800",
                 image: "/livingroom.png"
@@ -366,10 +370,12 @@ export default function HomePage() {
               >
                 {/* Service Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-70 group-hover:opacity-50 transition-opacity`}></div>
                   <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center border border-white/30">
@@ -519,10 +525,13 @@ export default function HomePage() {
                 key={i}
                 className="group relative aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-lg transition-all duration-500 cursor-pointer"
               >
-                <img
+                <Image
                   src={item.img}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-4">
