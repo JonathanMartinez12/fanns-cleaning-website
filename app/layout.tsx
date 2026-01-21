@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://fanns-cleaning.vercel.app'),
   title: "Professional Cleaning Services in Tomball, Magnolia, The Woodlands TX | Fann's Cleaning",
-  description: "Expert cleaning services serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring & Pinehurst TX. Over 10 years experience. Residential, commercial & deep cleaning. Pet-friendly products. Call (346) 588-0262 for free quote!",
+  description: "Expert cleaning services in Tomball, Magnolia & The Woodlands TX. 10+ years experience. Residential, commercial & deep cleaning. Pet-friendly. Call (346) 588-0262",
   keywords: "cleaning services Tomball TX, house cleaning Tomball, maid service Tomball, cleaning services Magnolia TX, cleaning services The Woodlands, cleaning services Conroe, cleaning services Willis, cleaning services Cypress, cleaning services Spring TX, cleaning services Pinehurst, residential cleaning Montgomery County, commercial cleaning Tomball, office cleaning The Woodlands, deep cleaning services, move out cleaning, move in cleaning, pet friendly cleaning, eco-friendly cleaning products, professional cleaners near me, house cleaning service near me, Montgomery County cleaning services, affordable cleaning services Texas",
   authors: [{ name: "Fann's Cleaning Services" }],
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Professional Cleaning Services - Tomball, Magnolia, The Woodlands & More | Fann's Cleaning",
     description: "Over 10 years delivering spotless homes & offices in Montgomery County. Pet-friendly products, transparent pricing, personalized service. Trusted by 500+ clients. Call (346) 588-0262 today!",
@@ -59,6 +63,14 @@ export default function RootLayout({
     founder: {
       '@type': 'Person',
       name: 'Courtney Gordy'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: "Fann's Cleaning Services",
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://fanns-cleaning.vercel.app/logo.png'
+      }
     },
     address: {
       '@type': 'PostalAddress',
