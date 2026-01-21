@@ -320,10 +320,10 @@ export default function HomePage() {
               Our Services
             </div>
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
-              Premium Cleaning Services
+              Comprehensive Cleaning Solutions
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Comprehensive cleaning solutions tailored to your needs
+              From routine maintenance to specialized services, we customize every job to meet your unique needs. Whether it's your home, office, or post-construction project, we treat every property like our own.
             </p>
           </div>
 
@@ -331,27 +331,27 @@ export default function HomePage() {
             {[
               {
                 icon: "home",
-                title: "Residential Cleaning",
-                desc: "Transform your home into a sparkling sanctuary with our thorough residential cleaning services.",
-                features: ["Routine Maintenance", "Deep Cleaning", "Move-In/Move-Out", "Custom Schedules"],
+                title: "Residential & Commercial Cleaning",
+                desc: "Routine home and office cleaning, deep-cleaning, upholstery, and floors. Flexible scheduling with weekly or one-time options to fit your lifestyle.",
+                features: ["Routine Maintenance", "Deep Cleaning", "Upholstery Cleaning", "Floor Care", "Weekly or One-Time Options"],
                 color: "from-blue-700 to-indigo-800",
                 image: "/livingroom.png"
               },
               {
                 icon: "building",
-                title: "Commercial Cleaning",
-                desc: "Keep your business looking professional with our reliable commercial cleaning solutions.",
-                features: ["Office Spaces", "Retail Stores", "Medical Facilities", "After-Hours Service"],
+                title: "Pressure Washing & Window Cleaning",
+                desc: "Restore your property's curb appeal with professional pressure washing for driveways, patios, and siding. Crystal-clear window cleaning inside and out.",
+                features: ["Driveway Washing", "Patio Cleaning", "Siding Restoration", "Interior Windows", "Exterior Windows"],
                 color: "from-slate-600 to-slate-700",
-                image: "/commercial_cleaning.png"
+                image: "/window_cleaning.png"
               },
               {
                 icon: "sparkles",
-                title: "Deep Cleaning",
-                desc: "Intensive cleaning that reaches every corner, perfect for seasonal refreshes or special occasions.",
-                features: ["Kitchen & Bathrooms", "Carpet Cleaning", "Window Washing", "Detailed Sanitization"],
+                title: "Post-Construction & Gutter Cleaning",
+                desc: "Specialized post-construction cleaning to remove dust and debris. Professional gutter cleaning to protect your home from water damage and keep drainage flowing.",
+                features: ["Construction Debris Removal", "Dust Elimination", "Gutter Cleaning", "Drainage Protection", "Water Damage Prevention"],
                 color: "from-teal-500 to-cyan-600",
-                image: "/deep_cleaning.png"
+                image: "/new_construction_cleaning.png"
               },
             ].map((service, i) => (
               <div
