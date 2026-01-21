@@ -77,27 +77,31 @@ export default function BlogPage() {
       }`}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="text-2xl font-bold text-blue-600 transition-colors">
-                <span className="group-hover:scale-110 inline-block transition-transform">✨</span>
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div className="text-2xl font-bold text-slate-900 transition-colors">
                 Fann's Cleaning
               </div>
             </Link>
 
             <div className="hidden lg:flex items-center gap-8">
-              <Link href="/#services" className="font-semibold text-gray-700 hover:text-blue-600 hover:scale-105 transition-all">
+              <Link href="/#services" className="font-semibold text-gray-700 hover:text-emerald-600 hover:scale-105 transition-all">
                 Services
               </Link>
-              <Link href="/about" className="font-semibold text-gray-700 hover:text-blue-600 hover:scale-105 transition-all">
+              <Link href="/about" className="font-semibold text-gray-700 hover:text-emerald-600 hover:scale-105 transition-all">
                 About
               </Link>
-              <Link href="/blog" className="font-semibold text-blue-600 hover:scale-105 transition-all">
+              <Link href="/blog" className="font-semibold text-emerald-600 hover:scale-105 transition-all">
                 Blog
               </Link>
-              <Link href="/#testimonials" className="font-semibold text-gray-700 hover:text-blue-600 hover:scale-105 transition-all">
+              <Link href="/#testimonials" className="font-semibold text-gray-700 hover:text-emerald-600 hover:scale-105 transition-all">
                 Testimonials
               </Link>
-              <Link href="/#contact" className="font-semibold text-gray-700 hover:text-blue-600 hover:scale-105 transition-all">
+              <Link href="/#contact" className="font-semibold text-gray-700 hover:text-emerald-600 hover:scale-105 transition-all">
                 Contact
               </Link>
             </div>
@@ -105,7 +109,7 @@ export default function BlogPage() {
             <div className="hidden lg:flex items-center gap-4">
               <a
                 href="tel:+13465880262"
-                className="group flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 bg-blue-50 text-blue-600 hover:bg-blue-100"
+                className="group flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 bg-emerald-50 text-emerald-600 hover:bg-emerald-100"
               >
                 <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -115,7 +119,7 @@ export default function BlogPage() {
               </a>
               <Link
                 href="/#contact"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
                 Get Free Quote
               </Link>
@@ -139,19 +143,19 @@ export default function BlogPage() {
           {isMobileMenuOpen && (
             <div className="lg:hidden mt-4 py-4 bg-white rounded-2xl shadow-2xl animate-slide-down">
               <div className="flex flex-col space-y-4 px-4">
-                <Link href="/#services" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2">
+                <Link href="/#services" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-emerald-600 hover:translate-x-2 transition-all py-2">
                   Services
                 </Link>
-                <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2">
+                <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-emerald-600 hover:translate-x-2 transition-all py-2">
                   About
                 </Link>
-                <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-blue-600 font-semibold py-2">
+                <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-emerald-600 font-semibold py-2">
                   Blog
                 </Link>
-                <Link href="/#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2">
+                <Link href="/#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-emerald-600 hover:translate-x-2 transition-all py-2">
                   Testimonials
                 </Link>
-                <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2">
+                <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-emerald-600 hover:translate-x-2 transition-all py-2">
                   Contact
                 </Link>
               </div>
@@ -161,14 +165,14 @@ export default function BlogPage() {
       </nav>
 
       {/* HERO */}
-      <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white py-40 mt-20">
+      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white py-40 mt-20">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920&h=600&fit=crop"
             alt="Blog"
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-700/90 via-blue-600/90 to-indigo-700/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-emerald-900/90"></div>
         </div>
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
@@ -216,7 +220,7 @@ export default function BlogPage() {
                     </span>
                   </div>
 
-                  <h2 className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
+                  <h2 className="text-2xl font-bold mb-3 group-hover:text-emerald-600 transition-colors">
                     {post.title}
                   </h2>
 
@@ -226,7 +230,7 @@ export default function BlogPage() {
 
                   <Link
                     href="#"
-                    className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:gap-3 transition-all"
                   >
                     Read More
                     <span>→</span>
@@ -237,7 +241,7 @@ export default function BlogPage() {
           </div>
 
           {/* Newsletter Signup */}
-          <div className="mt-20 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-12 text-white text-center shadow-2xl">
+          <div className="mt-20 bg-gradient-to-br from-emerald-600 to-emerald-900 rounded-3xl p-12 text-white text-center shadow-2xl">
             <h3 className="text-4xl font-bold mb-4">
               Get Cleaning Tips Delivered
             </h3>
@@ -250,7 +254,7 @@ export default function BlogPage() {
                 placeholder="Enter your email"
                 className="flex-1 px-6 py-4 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
               />
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <button className="bg-white text-emerald-600 px-8 py-4 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300">
                 Subscribe
               </button>
             </div>

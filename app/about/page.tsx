@@ -27,28 +27,32 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="text-2xl font-bold text-blue-600 transition-colors">
-                <span className="group-hover:scale-110 inline-block transition-transform">✨</span>
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div className="text-2xl font-bold text-slate-900 transition-colors">
                 Fann's Cleaning
               </div>
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
-              <Link href="/#services" className="font-semibold text-gray-700 hover:text-blue-600 hover:scale-105 transition-all">
+              <Link href="/#services" className="font-semibold text-gray-700 hover:text-emerald-600 hover:scale-105 transition-all">
                 Services
               </Link>
-              <Link href="/about" className="font-semibold text-blue-600 hover:scale-105 transition-all">
+              <Link href="/about" className="font-semibold text-emerald-600 hover:scale-105 transition-all">
                 About
               </Link>
-              <Link href="/blog" className="font-semibold text-gray-700 hover:text-blue-600 hover:scale-105 transition-all">
+              <Link href="/blog" className="font-semibold text-gray-700 hover:text-emerald-600 hover:scale-105 transition-all">
                 Blog
               </Link>
-              <Link href="/#testimonials" className="font-semibold text-gray-700 hover:text-blue-600 hover:scale-105 transition-all">
+              <Link href="/#testimonials" className="font-semibold text-gray-700 hover:text-emerald-600 hover:scale-105 transition-all">
                 Testimonials
               </Link>
-              <Link href="/#contact" className="font-semibold text-gray-700 hover:text-blue-600 hover:scale-105 transition-all">
+              <Link href="/#contact" className="font-semibold text-gray-700 hover:text-emerald-600 hover:scale-105 transition-all">
                 Contact
               </Link>
             </div>
@@ -57,7 +61,7 @@ export default function AboutPage() {
             <div className="hidden lg:flex items-center gap-4">
               <a
                 href="tel:+13465880262"
-                className="group flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 bg-blue-50 text-blue-600 hover:bg-blue-100"
+                className="group flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 bg-emerald-50 text-emerald-600 hover:bg-emerald-100"
               >
                 <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -67,7 +71,7 @@ export default function AboutPage() {
               </a>
               <Link
                 href="/#contact"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
                 Get Free Quote
               </Link>
@@ -93,19 +97,19 @@ export default function AboutPage() {
           {isMobileMenuOpen && (
             <div className="lg:hidden mt-4 py-4 bg-white rounded-2xl shadow-2xl animate-slide-down">
               <div className="flex flex-col space-y-4 px-4">
-                <Link href="/#services" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2">
+                <Link href="/#services" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-emerald-600 hover:translate-x-2 transition-all py-2">
                   Services
                 </Link>
-                <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-blue-600 font-semibold py-2">
+                <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-emerald-600 font-semibold py-2">
                   About
                 </Link>
-                <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2">
+                <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-emerald-600 hover:translate-x-2 transition-all py-2">
                   Blog
                 </Link>
-                <Link href="/#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2">
+                <Link href="/#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-emerald-600 hover:translate-x-2 transition-all py-2">
                   Testimonials
                 </Link>
-                <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2">
+                <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-semibold hover:text-emerald-600 hover:translate-x-2 transition-all py-2">
                   Contact
                 </Link>
               </div>
@@ -115,14 +119,14 @@ export default function AboutPage() {
       </nav>
 
       {/* HERO */}
-      <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white py-40 mt-20">
+      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white py-40 mt-20">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&h=600&fit=crop"
             alt="About Fann's Cleaning"
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-700/90 via-blue-600/90 to-indigo-700/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-emerald-900/90"></div>
         </div>
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
@@ -182,40 +186,42 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: "🤝",
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
                 title: "Trust & Integrity",
                 desc: "We treat your home and business with the respect they deserve. All team members are background-checked and insured."
               },
               {
-                icon: "✨",
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>,
                 title: "Quality Excellence",
                 desc: "We never cut corners. Every cleaning is thorough, detailed, and meets our rigorous quality standards."
               },
               {
-                icon: "💚",
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
                 title: "Eco-Friendly",
                 desc: "We use environmentally safe products that are tough on dirt but gentle on your family, pets, and the planet."
               },
               {
-                icon: "🎯",
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
                 title: "Reliability",
                 desc: "We show up on time, every time. You can count on us to be there when we say we will."
               },
               {
-                icon: "👥",
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>,
                 title: "Local Community",
                 desc: "As a locally owned business, we're invested in Tomball's success and give back to our community."
               },
               {
-                icon: "⭐",
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" /></svg>,
                 title: "Customer First",
                 desc: "Your satisfaction is our top priority. We're not happy until you're thrilled with the results."
               }
             ].map((value, i) => (
-              <div key={i} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div className="text-6xl mb-6">{value.icon}</div>
-                <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.desc}</p>
+              <div key={i} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-300 hover:-translate-y-1">
+                <div className="w-16 h-16 mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white">
+                  {value.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-slate-900">{value.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -223,7 +229,7 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM STATS */}
-      <section className="py-28 bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white">
+      <section className="py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6">
@@ -258,7 +264,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/#contact"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-5 rounded-xl font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-10 py-5 rounded-xl font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
           >
             Get Your Free Quote
             <span>→</span>

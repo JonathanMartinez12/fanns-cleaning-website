@@ -89,11 +89,19 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2 group">
-              <div className={`text-2xl font-bold transition-colors ${
-                isScrolled ? 'text-blue-600' : 'text-white'
+            <a href="#" className="flex items-center gap-3 group">
+              <div className={`w-10 h-10 rounded-lg transition-all duration-300 flex items-center justify-center ${
+                isScrolled
+                  ? 'bg-gradient-to-br from-emerald-500 to-teal-600'
+                  : 'bg-white/20 backdrop-blur-sm'
               }`}>
-                <span className="group-hover:scale-110 inline-block transition-transform">✨</span>
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div className={`text-2xl font-bold transition-colors ${
+                isScrolled ? 'text-gray-900' : 'text-white'
+              }`}>
                 Fann's Cleaning
               </div>
             </a>
@@ -102,40 +110,40 @@ export default function HomePage() {
             <div className="hidden lg:flex items-center gap-8">
               <a
                 href="#services"
-                className={`font-semibold hover:scale-105 transition-all ${
-                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                className={`font-medium hover:scale-105 transition-all ${
+                  isScrolled ? 'text-gray-600 hover:text-emerald-600' : 'text-white/90 hover:text-white'
                 }`}
               >
                 Services
               </a>
               <a
                 href="/about"
-                className={`font-semibold hover:scale-105 transition-all ${
-                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                className={`font-medium hover:scale-105 transition-all ${
+                  isScrolled ? 'text-gray-600 hover:text-emerald-600' : 'text-white/90 hover:text-white'
                 }`}
               >
                 About
               </a>
               <a
                 href="/blog"
-                className={`font-semibold hover:scale-105 transition-all ${
-                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                className={`font-medium hover:scale-105 transition-all ${
+                  isScrolled ? 'text-gray-600 hover:text-emerald-600' : 'text-white/90 hover:text-white'
                 }`}
               >
                 Blog
               </a>
               <a
                 href="#testimonials"
-                className={`font-semibold hover:scale-105 transition-all ${
-                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                className={`font-medium hover:scale-105 transition-all ${
+                  isScrolled ? 'text-gray-600 hover:text-emerald-600' : 'text-white/90 hover:text-white'
                 }`}
               >
                 Testimonials
               </a>
               <a
                 href="#contact"
-                className={`font-semibold hover:scale-105 transition-all ${
-                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                className={`font-medium hover:scale-105 transition-all ${
+                  isScrolled ? 'text-gray-600 hover:text-emerald-600' : 'text-white/90 hover:text-white'
                 }`}
               >
                 Contact
@@ -147,14 +155,14 @@ export default function HomePage() {
               {/* Phone Button */}
               <a
                 href="tel:+13465880262"
-                className={`group flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105 ${
+                className={`group flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all duration-300 ${
                   isScrolled
-                    ? 'bg-blue-50 text-blue-600 hover:bg-blue-100'
-                    : 'bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm'
+                    ? 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
+                    : 'bg-white/10 text-white hover:bg-white/20 backdrop-blur-md border border-white/20'
                 }`}
               >
                 <svg
-                  className="w-5 h-5 group-hover:rotate-12 transition-transform"
+                  className="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -168,7 +176,7 @@ export default function HomePage() {
               {/* Get Quote CTA */}
               <a
                 href="#contact"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
+                className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-2.5 rounded-lg font-medium hover:shadow-lg hover:shadow-emerald-500/25 hover:scale-105 transition-all duration-300"
               >
                 Get Free Quote
               </a>
@@ -199,43 +207,43 @@ export default function HomePage() {
                 <a
                   href="#services"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2"
+                  className="text-slate-700 font-medium hover:text-emerald-600 hover:translate-x-2 transition-all py-2"
                 >
                   Services
                 </a>
                 <a
                   href="/about"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2"
+                  className="text-slate-700 font-medium hover:text-emerald-600 hover:translate-x-2 transition-all py-2"
                 >
                   About
                 </a>
                 <a
                   href="/blog"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2"
+                  className="text-slate-700 font-medium hover:text-emerald-600 hover:translate-x-2 transition-all py-2"
                 >
                   Blog
                 </a>
                 <a
                   href="#testimonials"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2"
+                  className="text-slate-700 font-medium hover:text-emerald-600 hover:translate-x-2 transition-all py-2"
                 >
                   Testimonials
                 </a>
                 <a
                   href="#contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-gray-700 font-semibold hover:text-blue-600 hover:translate-x-2 transition-all py-2"
+                  className="text-slate-700 font-medium hover:text-emerald-600 hover:translate-x-2 transition-all py-2"
                 >
                   Contact
                 </a>
-                <div className="border-t pt-4 space-y-3">
+                <div className="border-t border-slate-200 pt-4 space-y-3">
                   <a
                     href="tel:+13465880262"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center gap-2 bg-blue-50 text-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-100 transition-colors"
+                    className="flex items-center gap-2 bg-emerald-50 text-emerald-700 px-6 py-3 rounded-lg font-medium hover:bg-emerald-100 transition-colors"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -245,7 +253,7 @@ export default function HomePage() {
                   <a
                     href="#contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl transition-all"
+                    className="block text-center bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all"
                   >
                     Get Free Quote
                   </a>
@@ -256,7 +264,7 @@ export default function HomePage() {
         </div>
       </nav>
       {/* HERO */}
-      <section className="relative bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white py-32 overflow-hidden">
         {/* Hero Background Image */}
         <div className="absolute inset-0">
           <img
@@ -264,7 +272,7 @@ export default function HomePage() {
             alt="Professional cleaning service"
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-700/90 via-blue-600/90 to-indigo-700/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-emerald-900/95"></div>
         </div>
 
         {/* Animated decorative background pattern */}
@@ -275,31 +283,34 @@ export default function HomePage() {
         </div>
 
         <div className="relative max-w-6xl mx-auto px-6 text-center animate-fade-in">
-          <div className="inline-block mb-4 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium animate-slide-down">
-            ✨ Premium Cleaning Services Serving Tomball, Magnolia, The Woodlands & More
+          <div className="inline-block mb-6 px-5 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full text-sm font-medium animate-slide-down border border-emerald-400/30">
+            <span className="text-emerald-300">Premium Cleaning Services</span>
+            <span className="text-white/60 mx-2">•</span>
+            <span className="text-white/90">Montgomery County & Surrounding Areas</span>
           </div>
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight tracking-tight animate-slide-up">
-            Pristine Spaces.<br />
-            <span className="text-blue-200 bg-clip-text">Exceptional Service.</span>
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight animate-slide-up">
+            Professional Cleaning<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">You Can Trust</span>
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed text-blue-50 animate-slide-up animation-delay-200">
-            Over 10 years of experience delivering spotless homes and offices in Tomball, Magnolia, and Montgomery County.
-            Pet-friendly products, transparent pricing, and personalized attention to every detail.
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed text-slate-200 animate-slide-up animation-delay-200">
+            Over 10 years delivering spotless homes and offices across Tomball, Magnolia, The Woodlands, and beyond.
+            <span className="block mt-2 text-lg text-slate-300">Pet-friendly • Transparent Pricing • Personalized Service</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up animation-delay-400">
             <a
               href="#contact"
-              className="group relative inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-10 py-5 rounded-xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 animate-float overflow-hidden"
+              className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold px-8 py-4 rounded-lg shadow-xl shadow-emerald-500/25 hover:shadow-2xl hover:shadow-emerald-500/40 hover:scale-105 transition-all duration-300"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-100 to-indigo-100 opacity-0 group-hover:opacity-100 transition-opacity"></span>
               <span className="relative">Get Your Free Quote</span>
-              <span className="relative group-hover:translate-x-1 transition-transform">→</span>
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </a>
             <a
               href="#services"
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white font-semibold px-10 py-5 rounded-xl border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md text-white font-medium px-8 py-4 rounded-lg border border-white/20 hover:bg-white/10 hover:border-white/40 transition-all duration-300"
             >
-              View Services
+              View Our Services
             </a>
           </div>
 
@@ -331,13 +342,13 @@ export default function HomePage() {
       <section id="services" className="py-28 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4 animate-fade-in">
-              WHAT WE OFFER
+            <div className="inline-block px-5 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium mb-4 animate-fade-in border border-emerald-100">
+              Our Services
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
               Premium Cleaning Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Comprehensive cleaning solutions tailored to your needs
             </p>
           </div>
@@ -345,33 +356,33 @@ export default function HomePage() {
           <div ref={servicesRef} className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: "🏠",
+                icon: "home",
                 title: "Residential Cleaning",
                 desc: "Transform your home into a sparkling sanctuary with our thorough residential cleaning services.",
                 features: ["Routine Maintenance", "Deep Cleaning", "Move-In/Move-Out", "Custom Schedules"],
-                color: "from-blue-500 to-blue-600",
+                color: "from-emerald-500 to-teal-600",
                 image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=400&fit=crop"
               },
               {
-                icon: "🏢",
+                icon: "building",
                 title: "Commercial Cleaning",
                 desc: "Keep your business looking professional with our reliable commercial cleaning solutions.",
                 features: ["Office Spaces", "Retail Stores", "Medical Facilities", "After-Hours Service"],
-                color: "from-indigo-500 to-indigo-600",
+                color: "from-slate-600 to-slate-700",
                 image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=400&fit=crop"
               },
               {
-                icon: "✨",
+                icon: "sparkles",
                 title: "Deep Cleaning",
                 desc: "Intensive cleaning that reaches every corner, perfect for seasonal refreshes or special occasions.",
                 features: ["Kitchen & Bathrooms", "Carpet Cleaning", "Window Washing", "Detailed Sanitization"],
-                color: "from-purple-500 to-purple-600",
+                color: "from-teal-500 to-cyan-600",
                 image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&h=400&fit=crop"
               },
             ].map((service, i) => (
               <div
                 key={i}
-                className={`group relative bg-white border-2 border-gray-100 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:border-blue-200 transition-all duration-500 ${
+                className={`group relative bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-500 ${
                   servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{
@@ -384,30 +395,48 @@ export default function HomePage() {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-60 group-hover:opacity-40 transition-opacity`}></div>
-                  <div className="absolute top-4 right-4 text-5xl group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 drop-shadow-lg">
-                    {service.icon}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-70 group-hover:opacity-50 transition-opacity`}></div>
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center border border-white/30">
+                    {service.icon === 'home' && (
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                    )}
+                    {service.icon === 'building' && (
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    )}
+                    {service.icon === 'sparkles' && (
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                      </svg>
+                    )}
                   </div>
                 </div>
 
                 <div className="relative p-8">
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-2xl font-bold mb-4 text-slate-900 group-hover:text-emerald-600 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.desc}</p>
+                  <p className="text-slate-600 mb-6 leading-relaxed">{service.desc}</p>
                   <ul className="space-y-3 mb-8">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-gray-700 group-hover:translate-x-1 transition-transform" style={{ transitionDelay: `${idx * 50}ms` }}>
-                        <span className="text-blue-600 font-bold">✓</span>
+                      <li key={idx} className="flex items-center gap-3 text-sm text-slate-700 group-hover:translate-x-1 transition-transform" style={{ transitionDelay: `${idx * 50}ms` }}>
+                        <svg className="w-5 h-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <a href="#contact" className="inline-flex items-center text-blue-600 font-semibold group-hover:gap-2 transition-all">
+                  <a href="#contact" className="inline-flex items-center text-emerald-600 font-semibold hover:text-emerald-700 group-hover:gap-2 transition-all">
                     Learn More
-                    <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </a>
                 </div>
               </div>
@@ -431,22 +460,22 @@ export default function HomePage() {
           <div ref={whyUsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: "🎯",
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
                 title: "Attention to Detail",
                 desc: "Every corner, every surface cleaned to perfection"
               },
               {
-                icon: "⚡",
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
                 title: "Reliable Service",
                 desc: "On-time, every time with consistent quality"
               },
               {
-                icon: "💎",
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>,
                 title: "Premium Products",
                 desc: "Eco-friendly, professional-grade supplies"
               },
               {
-                icon: "🤝",
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" /></svg>,
                 title: "Customer First",
                 desc: "100% satisfaction guaranteed or we make it right"
               }
@@ -458,28 +487,28 @@ export default function HomePage() {
                 }`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="text-5xl mb-4 inline-block group-hover:scale-125 group-hover:-rotate-12 transition-all duration-300 animate-bounce-slow">
+                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-emerald-500/25">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-emerald-600 transition-colors">{item.title}</h3>
+                <p className="text-slate-600">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className={`mt-20 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-12 text-white text-center shadow-2xl relative overflow-hidden transition-all duration-700 ${
+          <div className={`mt-20 bg-gradient-to-br from-slate-800 to-emerald-900 rounded-2xl p-12 text-white text-center shadow-xl relative overflow-hidden transition-all duration-700 ${
             whyUsVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}>
             {/* Animated background pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-400 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-400 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
             </div>
             <div className="relative">
               <h3 className="text-3xl font-bold mb-4">Proudly Serving Montgomery County & Surrounding Areas</h3>
-              <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              <p className="text-xl text-slate-200 max-w-2xl mx-auto">
                 Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX.
-                As a locally owned business, we're not just cleaning homes and offices—we're building lasting relationships.
+                <span className="block mt-2 text-lg text-emerald-300">As a locally owned business, we're not just cleaning homes and offices—we're building lasting relationships.</span>
               </p>
             </div>
           </div>
@@ -490,13 +519,13 @@ export default function HomePage() {
       <section className="py-28 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-              SEE THE DIFFERENCE
+            <div className="inline-block px-5 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium mb-4 border border-emerald-100">
+              Before & After
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
               Transformations That Speak
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               See the remarkable difference our professional cleaning makes
             </p>
           </div>
@@ -570,13 +599,13 @@ export default function HomePage() {
       <section className="py-28 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-              OUR WORK
+            <div className="inline-block px-5 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium mb-4 border border-emerald-100">
+              Our Work
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
               Excellence in Every Detail
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               A glimpse into our professional cleaning services
             </p>
           </div>
@@ -594,16 +623,19 @@ export default function HomePage() {
             ].map((img, i) => (
               <div
                 key={i}
-                className="group relative aspect-square overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                className="group relative aspect-square overflow-hidden rounded-xl shadow-sm hover:shadow-lg transition-all duration-500 cursor-pointer"
               >
                 <img
                   src={img}
                   alt={`Cleaning service ${i + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white font-semibold text-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2">
+                    <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <p className="text-white font-medium text-sm">
                       Professional Cleaning
                     </p>
                   </div>
@@ -615,10 +647,12 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:shadow-emerald-500/25 hover:scale-105 transition-all duration-300"
             >
               See How We Can Help You
-              <span>→</span>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </a>
           </div>
         </div>
@@ -628,10 +662,10 @@ export default function HomePage() {
       <section id="testimonials" className="py-28 bg-gray-50 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-              TESTIMONIALS
+            <div className="inline-block px-5 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium mb-4 border border-emerald-100">
+              Testimonials
             </div>
-            <h2 className="text-5xl font-bold mb-6">
+            <h2 className="text-5xl font-bold mb-6 text-slate-900">
               What Our Clients Say
             </h2>
           </div>
@@ -659,7 +693,7 @@ export default function HomePage() {
             ].map((testimonial, i) => (
               <div
                 key={i}
-                className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${
+                className={`bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-emerald-100/50 transition-all duration-500 hover:-translate-y-1 ${
                   testimonialsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
                 }`}
                 style={{
@@ -668,25 +702,26 @@ export default function HomePage() {
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, idx) => (
-                    <span
+                    <svg
                       key={idx}
-                      className="text-yellow-400 text-xl inline-block hover:scale-125 transition-transform cursor-default"
-                      style={{ transitionDelay: `${idx * 50}ms` }}
+                      className="w-5 h-5 text-emerald-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
                     >
-                      ★
-                    </span>
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 leading-relaxed italic">
+                <p className="text-slate-700 mb-6 leading-relaxed">
                   "{testimonial.text}"
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xl hover:scale-110 hover:rotate-12 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-xl shadow-md">
                     {testimonial.name[0]}
                   </div>
                   <div>
-                    <div className="font-bold">{testimonial.name}</div>
-                    <div className="text-sm text-gray-500">{testimonial.role}</div>
+                    <div className="font-bold text-slate-900">{testimonial.name}</div>
+                    <div className="text-sm text-slate-500">{testimonial.role}</div>
                   </div>
                 </div>
               </div>
@@ -696,7 +731,7 @@ export default function HomePage() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-28 bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white relative overflow-hidden">
+      <section id="contact" className="py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 text-white relative overflow-hidden">
         {/* Decorative elements with animation */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-10 w-72 h-72 bg-white rounded-full blur-3xl animate-blob"></div>
@@ -705,13 +740,13 @@ export default function HomePage() {
 
         <div className="relative max-w-4xl mx-auto px-6">
           <div className="text-center mb-12 animate-fade-in">
-            <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold mb-4">
-              GET IN TOUCH
+            <div className="inline-block px-5 py-2 bg-emerald-500/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4 border border-emerald-400/30">
+              <span className="text-emerald-300">Get In Touch</span>
             </div>
             <h2 className="text-5xl font-bold mb-6">
               Ready for a Spotless Space?
             </h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-200 max-w-2xl mx-auto">
               Fill out the form below and we'll get back to you within 24 hours with a free, no-obligation quote
             </p>
           </div>
@@ -781,10 +816,14 @@ export default function HomePage() {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-5 rounded-xl font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden group animate-slide-up animation-delay-600"
+                className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-5 rounded-lg font-semibold text-lg shadow-xl shadow-emerald-500/25 hover:shadow-2xl hover:shadow-emerald-500/40 hover:scale-105 transition-all duration-300 relative overflow-hidden group animate-slide-up animation-delay-600"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                <span className="relative">Get Your Free Quote →</span>
+                <span className="relative flex items-center justify-center gap-2">
+                  Get Your Free Quote
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
               </button>
 
               <p className="text-center text-sm text-gray-500 animate-fade-in animation-delay-700">
@@ -795,14 +834,20 @@ export default function HomePage() {
 
           {/* Contact info */}
           <div className="mt-12 text-center animate-fade-in animation-delay-800">
-            <p className="text-blue-100 mb-4">Or reach us directly:</p>
+            <p className="text-slate-300 mb-4">Or reach us directly:</p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-lg">
-              <a href="tel:+13465880262" className="flex items-center gap-2 hover:text-blue-200 hover:scale-110 transition-all">
-                📞 (346) 588-0262
+              <a href="tel:+13465880262" className="flex items-center gap-2 text-white hover:text-emerald-300 hover:scale-105 transition-all">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                (346) 588-0262
               </a>
-              <span className="hidden sm:inline text-blue-300">•</span>
-              <a href="mailto:fannsclean23@gmail.com" className="flex items-center gap-2 hover:text-blue-200 hover:scale-110 transition-all">
-                ✉️ fannsclean23@gmail.com
+              <span className="hidden sm:inline text-slate-600">•</span>
+              <a href="mailto:fannsclean23@gmail.com" className="flex items-center gap-2 text-white hover:text-emerald-300 hover:scale-105 transition-all">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                fannsclean23@gmail.com
               </a>
             </div>
           </div>
@@ -810,40 +855,39 @@ export default function HomePage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-16">
+      <footer className="bg-slate-900 text-slate-300 py-16 border-t border-slate-800">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             {/* Company Info */}
             <div className="animate-fade-in">
-              <h3 className="text-2xl font-bold text-white mb-4">Fann's Cleaning</h3>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-white">Fann's Cleaning</h3>
+              </div>
+              <p className="text-slate-400 leading-relaxed mb-4">
                 Professional cleaning services for homes and businesses in Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX.
               </p>
-              <div className="flex gap-4">
-                {['f', 'in', '✉'].map((icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="w-10 h-10 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-                  >
-                    {icon}
-                  </a>
-                ))}
-              </div>
             </div>
 
             {/* Quick Links */}
             <div className="animate-fade-in animation-delay-200">
               <h4 className="text-lg font-bold text-white mb-4">Quick Links</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {[
                   { text: "Our Services", href: "#services" },
                   { text: "Get a Quote", href: "#contact" },
-                  { text: "About Us", href: "#" },
-                  { text: "Contact", href: "#" }
+                  { text: "About Us", href: "/about" },
+                  { text: "Blog", href: "/blog" }
                 ].map((link, i) => (
                   <li key={i}>
-                    <a href={link.href} className="hover:text-white hover:translate-x-2 inline-block transition-all">
+                    <a href={link.href} className="text-slate-400 hover:text-emerald-400 hover:translate-x-1 inline-block transition-all flex items-center gap-2">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                       {link.text}
                     </a>
                   </li>
@@ -854,32 +898,39 @@ export default function HomePage() {
             {/* Contact Info */}
             <div className="animate-fade-in animation-delay-400">
               <h4 className="text-lg font-bold text-white mb-4">Contact Us</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li className="flex items-start gap-2 hover:text-white transition-colors">
-                  <span>📍</span>
+              <ul className="space-y-3 text-slate-400">
+                <li className="flex items-start gap-3 hover:text-emerald-400 transition-colors">
+                  <svg className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
                   <span>Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span>📞</span>
-                  <a href="tel:+13465880262" className="hover:text-white transition-colors">(346) 588-0262</a>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <a href="tel:+13465880262" className="hover:text-emerald-400 transition-colors">(346) 588-0262</a>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span>✉️</span>
-                  <a href="mailto:fannsclean23@gmail.com" className="hover:text-white transition-colors">fannsclean23@gmail.com</a>
+                <li className="flex items-center gap-3">
+                  <svg className="w-5 h-5 text-emerald-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <a href="mailto:fannsclean23@gmail.com" className="hover:text-emerald-400 transition-colors">fannsclean23@gmail.com</a>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-700 pt-8 text-center text-sm">
-            <p className="mb-2">© {new Date().getFullYear()} Fann's Cleaning Services. All rights reserved.</p>
-            <p className="text-gray-500">
+          <div className="border-t border-slate-800 pt-8 text-center text-sm">
+            <p className="mb-2 text-slate-400">© {new Date().getFullYear()} Fann's Cleaning Services. All rights reserved.</p>
+            <p className="text-slate-500">
               Website crafted by{" "}
               <a
                 href="https://nola-web-development.web.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 transition-all hover:underline"
+                className="text-emerald-400 hover:text-emerald-300 transition-all hover:underline"
               >
                 NOLA Web Development
               </a>
