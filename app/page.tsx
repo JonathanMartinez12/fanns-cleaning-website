@@ -343,7 +343,7 @@ export default function HomePage() {
                 desc: "Keep your business looking professional with our reliable commercial cleaning solutions.",
                 features: ["Office Spaces", "Retail Stores", "Medical Facilities", "After-Hours Service"],
                 color: "from-slate-600 to-slate-700",
-                image: "/post_construction.png"
+                image: "/commercial_cleaning.png"
               },
               {
                 icon: "sparkles",
@@ -351,7 +351,7 @@ export default function HomePage() {
                 desc: "Intensive cleaning that reaches every corner, perfect for seasonal refreshes or special occasions.",
                 features: ["Kitchen & Bathrooms", "Carpet Cleaning", "Window Washing", "Detailed Sanitization"],
                 color: "from-teal-500 to-cyan-600",
-                image: "/nice_kitchen.png"
+                image: "/deep_cleaning.png"
               },
             ].map((service, i) => (
               <div
@@ -487,86 +487,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BEFORE & AFTER GALLERY */}
-      <section className="py-28 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
-            <div className="inline-block px-5 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-medium mb-4 border border-blue-100">
-              Before & After
-            </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
-              Transformations That Speak
-            </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              See the remarkable difference our professional cleaning makes
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            {[
-              {
-                before: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop",
-                after: "/nice_kitchen.png",
-                title: "Kitchen Transformation"
-              },
-              {
-                before: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-                after: "/livingroom_2.png",
-                title: "Living Room Makeover"
-              }
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500"
-              >
-                <div className="relative h-80">
-                  {/* Before Image */}
-                  <div className="absolute inset-0 w-1/2 left-0">
-                    <img
-                      src={item.before}
-                      alt="Before cleaning"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm">
-                      Before
-                    </div>
-                  </div>
-
-                  {/* After Image */}
-                  <div className="absolute inset-0 w-1/2 right-0">
-                    <img
-                      src={item.after}
-                      alt="After cleaning"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm">
-                      After
-                    </div>
-                  </div>
-
-                  {/* Divider */}
-                  <div className="absolute inset-y-0 left-1/2 w-1 bg-white shadow-lg transform -translate-x-1/2 z-10">
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center">
-                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-center group-hover:text-blue-600 transition-colors">
-                    {item.title}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* PHOTO GALLERY */}
       <section className="py-28 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
@@ -589,9 +509,11 @@ export default function HomePage() {
               { img: "/livingroom.png", title: "Fresh Living Space" },
               { img: "/post_construction.png", title: "Post-Construction Clean" },
               { img: "/livingroom_2.png", title: "Spotless Living Room" },
-              { img: "/nice_kitchen.png", title: "Kitchen Deep Clean" },
-              { img: "/bathroom.png", title: "Bathroom Shine" },
-              { img: "/livingroom.png", title: "Living Area Refresh" }
+              { img: "/commercial_cleaning.png", title: "Commercial Space Cleaning" },
+              { img: "/deep_cleaning.png", title: "Deep Cleaning Service" },
+              { img: "/livingroom_3.png", title: "Living Room Refresh" },
+              { img: "/new_construction_cleaning.png", title: "New Construction Cleaning" },
+              { img: "/window_cleaning.png", title: "Window Cleaning Service" }
             ].map((item, i) => (
               <div
                 key={i}
