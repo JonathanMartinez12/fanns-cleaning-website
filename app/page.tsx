@@ -60,13 +60,8 @@ export default function HomePage() {
   const [servicesRef, servicesVisible] = useScrollAnimation();
   const [whyUsRef, whyUsVisible] = useScrollAnimation();
   const [testimonialsRef, testimonialsVisible] = useScrollAnimation();
-  const [statsRef, statsVisible] = useScrollAnimation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const clientsCount = useCounter(500, 2000, statsVisible);
-  const yearsCount = useCounter(10, 2000, statsVisible);
-  const satisfactionCount = useCounter(100, 2000, statsVisible);
 
   // Handle scroll for navbar background
   useEffect(() => {
@@ -314,27 +309,6 @@ export default function HomePage() {
             </a>
           </div>
 
-          {/* Trust indicators with animated counters */}
-          <div ref={statsRef} className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <div className="text-center transform hover:scale-110 transition-transform duration-300">
-              <div className="text-4xl font-bold mb-1">
-                {statsVisible ? `${clientsCount}+` : '0+'}
-              </div>
-              <div className="text-blue-100 text-sm">Happy Clients</div>
-            </div>
-            <div className="text-center border-x border-white/20 transform hover:scale-110 transition-transform duration-300">
-              <div className="text-4xl font-bold mb-1">
-                {statsVisible ? `${yearsCount}+` : '0+'}
-              </div>
-              <div className="text-blue-100 text-sm">Years Experience</div>
-            </div>
-            <div className="text-center transform hover:scale-110 transition-transform duration-300">
-              <div className="text-4xl font-bold mb-1">
-                {statsVisible ? `${satisfactionCount}%` : '0%'}
-              </div>
-              <div className="text-blue-100 text-sm">Satisfaction</div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -449,49 +423,47 @@ export default function HomePage() {
       <section className="py-28 bg-white overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6">
-              Why Choose Fann's Cleaning?
+            <div className="inline-block px-5 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-medium mb-4 border border-blue-100">
+              Why Choose Us
+            </div>
+            <h2 className="text-5xl font-bold mb-6 text-slate-900">
+              Why Choose Fann's Cleaning Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Trusted by Tomball residents and businesses for our commitment to excellence
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              We're not just another cleaning company. We're your trusted partner in maintaining a clean, healthy space with professionalism and care.
             </p>
           </div>
 
-          <div ref={whyUsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div ref={whyUsRef} className="grid md:grid-cols-3 gap-10">
             {[
               {
-                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
-                title: "Attention to Detail",
-                desc: "Every corner, every surface cleaned to perfection"
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+                title: "Pet-Friendly & Non-Toxic",
+                desc: "Safe for your furry family members. We use only non-toxic, pet-friendly cleaning products that protect your loved ones while delivering exceptional results."
               },
               {
-                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
-                title: "Reliable Service",
-                desc: "On-time, every time with consistent quality"
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+                title: "Transparent, Upfront Pricing",
+                desc: "No surprises, no hidden fees. You'll know exactly what you're paying before we start, with affordable rates that never sacrifice quality."
               },
               {
-                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>,
-                title: "Premium Products",
-                desc: "Eco-friendly, professional-grade supplies"
-              },
-              {
-                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" /></svg>,
-                title: "Customer First",
-                desc: "100% satisfaction guaranteed or we make it right"
+                icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>,
+                title: "Personalized Attention",
+                desc: "Every home is different. We customize our approach to your specific needs and treat your property with the same care we'd give our own."
               }
             ].map((item, i) => (
               <div
                 key={i}
-                className={`text-center group cursor-default transition-all duration-500 ${
+                className={`bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:shadow-blue-100/50 transition-all duration-500 hover:-translate-y-2 ${
                   whyUsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-700 to-indigo-800 rounded-xl flex items-center justify-center text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-blue-700/25">
+                <div className="w-16 h-16 mb-6 bg-gradient-to-br from-blue-700 to-indigo-800 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-700/25">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-blue-700 transition-colors">{item.title}</h3>
-                <p className="text-slate-600">{item.desc}</p>
+                <h3 className="text-2xl font-bold mb-4 text-slate-900">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -834,7 +806,7 @@ export default function HomePage() {
 
           <div className="text-center mt-12">
             <p className="text-slate-600 text-sm">
-              <span className="font-semibold text-slate-900">500+ Five-Star Reviews</span> • Hover to pause
+              <span className="font-semibold text-slate-900">Verified Five-Star Reviews</span> • Hover to pause
             </p>
           </div>
         </div>
