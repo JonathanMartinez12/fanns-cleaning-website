@@ -944,7 +944,7 @@ export default function HomePage() {
             <p className="text-slate-500">
               Website crafted by{" "}
               <a
-                href="https://nola-web-development.web.app/"
+                href="https://nolawebdevelopment.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-blue-300 transition-all hover:underline"
