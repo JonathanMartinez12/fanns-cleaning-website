@@ -2,9 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { blogPosts } from './blogData';
+import { useParams } from 'next/navigation';
+import { getBlogPostBySlug } from '../blogData';
 
-export default function BlogPage() {
+export default function BlogPostPage() {
+  const params = useParams();
+  const slug = params.slug as string;
+  const post = getBlogPostBySlug(slug);
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -16,6 +21,24 @@ export default function BlogPage() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // If post not found, show 404-like message
+  if (!post) {
+    return (
+      <main className="bg-white text-gray-900 min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">Blog Post Not Found</h1>
+          <p className="text-gray-600 mb-6">The blog post you're looking for doesn't exist.</p>
+          <Link
+            href="/blog"
+            className="inline-block bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all"
+          >
+            Back to Blog
+          </Link>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="bg-white text-gray-900">
@@ -114,85 +137,123 @@ export default function BlogPage() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-white py-40 mt-20">
+      {/* HERO IMAGE AND TITLE */}
+      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 text-white py-32 mt-20">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920&h=600&fit=crop"
-            alt="Blog"
-            className="w-full h-full object-cover opacity-20"
+            src={post.image}
+            alt={post.title}
+            className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-indigo-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/80 to-indigo-900/80"></div>
         </div>
 
-        <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold mb-4">
-            TIPS & INSIGHTS
+        <div className="relative max-w-4xl mx-auto px-6">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 text-blue-300 hover:text-blue-200 font-semibold mb-6 transition-colors"
+          >
+            <span>←</span> Back to Blog
+          </Link>
+
+          <div className="inline-block px-4 py-2 bg-blue-600 rounded-full text-sm font-semibold mb-4">
+            {post.category}
           </div>
-          <h1 className="text-6xl md:text-7xl font-bold mb-6">
-            Cleaning Blog
+
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            {post.title}
           </h1>
-          <p className="text-2xl text-blue-100">
-            Expert tips, guides, and insights for a cleaner, healthier space
-          </p>
+
+          <div className="flex items-center gap-6 text-blue-100">
+            <span className="flex items-center gap-2">
+              📅 {post.date}
+            </span>
+            <span className="flex items-center gap-2">
+              ⏱️ {post.readTime}
+            </span>
+          </div>
         </div>
       </section>
 
-      {/* BLOG POSTS */}
-      <section className="py-28 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, i) => (
-              <article
-                key={i}
-                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-              >
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
+      {/* BLOG CONTENT */}
+      <article className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          {/* Introduction */}
+          <div className="prose prose-lg max-w-none mb-12">
+            <p className="text-xl text-gray-700 leading-relaxed">
+              {post.content.introduction}
+            </p>
+          </div>
 
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                    <span className="flex items-center gap-1">
-                      📅 {post.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      ⏱️ {post.readTime}
-                    </span>
-                  </div>
-
-                  <Link href={`/blog/${post.slug}`}>
-                    <h2 className="text-2xl font-bold mb-3 group-hover:text-emerald-600 transition-colors cursor-pointer">
-                      {post.title}
-                    </h2>
-                  </Link>
-
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    {post.excerpt}
-                  </p>
-
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:gap-3 transition-all"
-                  >
-                    Read More
-                    <span>→</span>
-                  </Link>
-                </div>
-              </article>
+          {/* Content Sections */}
+          <div className="space-y-10">
+            {post.content.sections.map((section, index) => (
+              <div key={index} className="border-l-4 border-emerald-500 pl-6">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  {section.title}
+                </h2>
+                <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                  {section.content}
+                </p>
+                {section.items && (
+                  <ul className="space-y-2 ml-4">
+                    {section.items.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-gray-700">
+                        <span className="text-emerald-600 mt-1">✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             ))}
           </div>
+
+          {/* Conclusion */}
+          <div className="mt-12 p-8 bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Final Thoughts
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              {post.content.conclusion}
+            </p>
+          </div>
+
+          {/* Call to Action */}
+          <div className="mt-12 text-center p-10 bg-gradient-to-br from-blue-600 to-teal-600 rounded-3xl text-white">
+            <h3 className="text-3xl font-bold mb-4">
+              Ready for a Spotless Space?
+            </h3>
+            <p className="text-xl mb-6 text-blue-100">
+              Let Fann's Cleaning handle the hard work so you can focus on what matters most
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="tel:+13465880262"
+                className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:shadow-2xl hover:scale-105 transition-all"
+              >
+                Call (346) 588-0262
+              </a>
+              <Link
+                href="/#contact"
+                className="bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-emerald-700 hover:shadow-2xl hover:scale-105 transition-all"
+              >
+                Get Free Quote
+              </Link>
+            </div>
+          </div>
+
+          {/* Back to Blog */}
+          <div className="mt-12 text-center">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-emerald-600 font-semibold text-lg hover:gap-3 transition-all"
+            >
+              <span>←</span> View All Blog Posts
+            </Link>
+          </div>
         </div>
-      </section>
+      </article>
 
       {/* FOOTER */}
       <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-16">
