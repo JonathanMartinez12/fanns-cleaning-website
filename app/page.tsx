@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
+import emailjs from '@emailjs/browser';
 
 // Custom hook for scroll-triggered animations
 function useScrollAnimation() {
@@ -64,6 +65,17 @@ export default function HomePage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Contact form state
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    serviceType: 'Residential Cleaning',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+
   // Handle scroll for navbar background
   useEffect(() => {
     const handleScroll = () => {
@@ -73,6 +85,54 @@ export default function HomePage() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Handle form input changes
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // EmailJS configuration
+      const templateParams = {
+        from_name: formData.fullName,
+        from_email: formData.email,
+        phone: formData.phone,
+        service_type: formData.serviceType,
+        message: formData.message
+      };
+
+      await emailjs.send(
+        'service_01fq3n9', // Service ID
+        'template_o9fnul9', // Template ID
+        templateParams,
+        '9WWqIJU2uuaFXD7aj' // Public Key
+      );
+
+      setSubmitStatus('success');
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        serviceType: 'Residential Cleaning',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <main className="bg-white text-gray-900">
@@ -769,7 +829,33 @@ export default function HomePage() {
           </div>
 
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 hover:shadow-blue-500/20 transition-shadow duration-300">
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <div className="bg-green-50 border-2 border-green-200 rounded-xl p-4 flex items-start gap-3 animate-slide-up">
+                  <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <div>
+                    <h4 className="font-semibold text-green-900 mb-1">Message Sent Successfully!</h4>
+                    <p className="text-sm text-green-700">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4 flex items-start gap-3 animate-slide-up">
+                  <svg className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <div>
+                    <h4 className="font-semibold text-red-900 mb-1">Oops! Something went wrong</h4>
+                    <p className="text-sm text-red-700">Please try again or call us directly at (346) 588-0262</p>
+                  </div>
+                </div>
+              )}
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="animate-slide-up animation-delay-100">
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -777,9 +863,13 @@ export default function HomePage() {
                   </label>
                   <input
                     type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleInputChange}
                     placeholder="John Smith"
-                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300"
+                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div className="animate-slide-up animation-delay-200">
@@ -788,9 +878,13 @@ export default function HomePage() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="john@example.com"
-                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300"
+                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -802,15 +896,25 @@ export default function HomePage() {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     placeholder="(555) 123-4567"
-                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300"
+                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div className="animate-slide-up animation-delay-400">
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Service Type
                   </label>
-                  <select className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300">
+                  <select
+                    name="serviceType"
+                    value={formData.serviceType}
+                    onChange={handleInputChange}
+                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={isSubmitting}
+                  >
                     <option>Residential Cleaning</option>
                     <option>Commercial Cleaning</option>
                     <option>Deep Cleaning</option>
@@ -824,22 +928,39 @@ export default function HomePage() {
                   Tell Us About Your Needs *
                 </label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   placeholder="Please describe your cleaning needs, property size, and any specific requirements..."
                   rows={5}
-                  className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none hover:border-gray-300"
+                  className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none hover:border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-800 to-indigo-800 text-white py-5 rounded-lg font-semibold text-lg shadow-xl shadow-blue-700/25 hover:shadow-2xl hover:shadow-blue-700/40 hover:scale-105 transition-all duration-300 relative overflow-hidden group animate-slide-up animation-delay-600"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-blue-800 to-indigo-800 text-white py-5 rounded-lg font-semibold text-lg shadow-xl shadow-blue-700/25 hover:shadow-2xl hover:shadow-blue-700/40 hover:scale-105 transition-all duration-300 relative overflow-hidden group animate-slide-up animation-delay-600 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <span className="relative flex items-center justify-center gap-2">
-                  Get Your Free Quote
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Get Your Free Quote
+                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </>
+                  )}
                 </span>
               </button>
 
