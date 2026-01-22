@@ -2,9 +2,79 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  // Contact form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: ''
+  })
+  const [formStatus, setFormStatus] = useState({ type: '', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setFormStatus({ type: '', message: '' })
+
+    try {
+      // EmailJS configuration
+      const serviceId = 'service_01fq3n9'
+      const templateId = 'template_o9fnul9'
+      const publicKey = '9WWqIJU2uuaFXD'
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+          to_name: "Fann's Cleaning"
+        },
+        publicKey
+      )
+
+      setFormStatus({
+        type: 'success',
+        message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon!'
+      })
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: ''
+      })
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      setFormStatus({
+        type: 'error',
+        message: 'Oops! Something went wrong. Please try again or call us directly.'
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-white">
@@ -212,17 +282,187 @@ export default function HomePage() {
       </section>
 
       <section id="contact" className="py-20 px-4 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl md:text-6xl font-black">
-            Ready for a Spotless Space?
-          </h2>
-          <p className="text-xl md:text-2xl">
-            Get your free quote today!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+12815551234" className="bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
-              📞 Call (281) 555-1234
-            </a>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-6xl font-black mb-4">
+              Ready for a Spotless Space?
+            </h2>
+            <p className="text-xl md:text-2xl">
+              Get your free quote today!
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* Contact Form */}
+            <div className="bg-white rounded-3xl p-8 shadow-2xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
+
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition text-gray-900"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition text-gray-900"
+                    placeholder="john@example.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition text-gray-900"
+                    placeholder="(281) 555-1234"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="service" className="block text-gray-700 font-semibold mb-2">
+                    Service Needed
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition text-gray-900"
+                  >
+                    <option value="">Select a service</option>
+                    <option value="residential">Residential Cleaning</option>
+                    <option value="commercial">Commercial Cleaning</option>
+                    <option value="carpet">Carpet Shampooing</option>
+                    <option value="pressure">Pressure Washing</option>
+                    <option value="post-construction">Post-Construction</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows="4"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition text-gray-900 resize-none"
+                    placeholder="Tell us about your cleaning needs..."
+                  ></textarea>
+                </div>
+
+                {formStatus.message && (
+                  <div className={`p-4 rounded-lg ${
+                    formStatus.type === 'success'
+                      ? 'bg-green-50 text-green-800 border border-green-200'
+                      : 'bg-red-50 text-red-800 border border-red-200'
+                  }`}>
+                    {formStatus.message}
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message →'}
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <span className="text-3xl">📞</span>
+                    <div>
+                      <div className="font-semibold text-lg">Phone</div>
+                      <a href="tel:+12815551234" className="text-white/90 hover:text-white transition">
+                        (281) 555-1234
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <span className="text-3xl">📍</span>
+                    <div>
+                      <div className="font-semibold text-lg">Location</div>
+                      <div className="text-white/90">
+                        Serving Tomball, TX<br />and surrounding areas
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <span className="text-3xl">🕐</span>
+                    <div>
+                      <div className="font-semibold text-lg">Hours</div>
+                      <div className="text-white/90">
+                        Mon-Fri: 8AM - 6PM<br />
+                        Sat: 9AM - 4PM<br />
+                        Sun: Closed
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                <h3 className="text-xl font-bold mb-4">Why Choose Us?</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <span className="text-2xl">✓</span>
+                    <span>Licensed & Insured</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-2xl">✓</span>
+                    <span>Eco-Friendly Products</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-2xl">✓</span>
+                    <span>Satisfaction Guaranteed</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="text-2xl">✓</span>
+                    <span>Flexible Scheduling</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
