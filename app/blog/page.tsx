@@ -18,6 +18,7 @@ export default function BlogPage() {
 
   const blogPosts = [
     {
+      slug: "spring-cleaning-tips-texas-homes",
       title: "10 Essential Spring Cleaning Tips for Texas Homes",
       excerpt: "Spring is the perfect time to refresh your home. Discover our top 10 tips for a thorough spring clean that will leave your space sparkling.",
       image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=800&h=600&fit=crop",
@@ -26,6 +27,7 @@ export default function BlogPage() {
       readTime: "5 min read"
     },
     {
+      slug: "deep-cleaning-kitchen-guide",
       title: "The Ultimate Guide to Deep Cleaning Your Kitchen",
       excerpt: "From appliances to countertops, learn the professional techniques we use to make kitchens shine like new.",
       image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=600&fit=crop",
@@ -34,6 +36,7 @@ export default function BlogPage() {
       readTime: "8 min read"
     },
     {
+      slug: "eco-friendly-cleaning-benefits",
       title: "Eco-Friendly Cleaning: Better for You, Better for Earth",
       excerpt: "Learn about the benefits of green cleaning products and why we use them exclusively in all our services.",
       image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=600&fit=crop",
@@ -42,6 +45,7 @@ export default function BlogPage() {
       readTime: "6 min read"
     },
     {
+      slug: "home-deep-cleaning-schedule",
       title: "How Often Should You Deep Clean Your Home?",
       excerpt: "Discover the optimal cleaning schedule for different areas of your home to maintain a healthy, pristine living space.",
       image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
@@ -50,6 +54,7 @@ export default function BlogPage() {
       readTime: "4 min read"
     },
     {
+      slug: "office-cleaning-productivity-health",
       title: "Office Cleaning: Why It Matters More Than You Think",
       excerpt: "A clean office isn't just about appearances. Learn how professional cleaning boosts productivity and employee health.",
       image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&h=600&fit=crop",
@@ -58,6 +63,7 @@ export default function BlogPage() {
       readTime: "7 min read"
     },
     {
+      slug: "texas-allergy-season-cleaning-tips",
       title: "Allergy Season in Texas: Cleaning Tips to Breathe Easier",
       excerpt: "Combat allergens with these professional cleaning techniques designed for Texas allergy season.",
       image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
@@ -193,50 +199,50 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, i) => (
-              <article
+              <Link
                 key={i}
-                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                href={`/blog/${post.slug}`}
+                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 block"
               >
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                    <span className="flex items-center gap-1">
-                      📅 {post.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      ⏱️ {post.readTime}
-                    </span>
+                <article>
+                  <div className="relative h-56 overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">
+                        {post.category}
+                      </span>
+                    </div>
                   </div>
 
-                  <h2 className="text-2xl font-bold mb-3 group-hover:text-emerald-600 transition-colors">
-                    {post.title}
-                  </h2>
+                  <div className="p-6">
+                    <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                      <span className="flex items-center gap-1">
+                        📅 {post.date}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        ⏱️ {post.readTime}
+                      </span>
+                    </div>
 
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    {post.excerpt}
-                  </p>
+                    <h2 className="text-2xl font-bold mb-3 group-hover:text-emerald-600 transition-colors">
+                      {post.title}
+                    </h2>
 
-                  <Link
-                    href="#"
-                    className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:gap-3 transition-all"
-                  >
-                    Read More
-                    <span>→</span>
-                  </Link>
-                </div>
-              </article>
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      {post.excerpt}
+                    </p>
+
+                    <span className="inline-flex items-center gap-2 text-emerald-600 font-semibold group-hover:gap-3 transition-all">
+                      Read More
+                      <span>→</span>
+                    </span>
+                  </div>
+                </article>
+              </Link>
             ))}
           </div>
         </div>
