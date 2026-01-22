@@ -32,15 +32,9 @@ export default function HomePage() {
     setFormStatus({ type: '', message: '' })
 
     try {
-      // EmailJS configuration
-      const serviceId = 'service_01fq3n9'
-      const templateId = 'template_o9fnul9'
-      const publicKey = '9WWqIJU2uuaFXD'
-
-      // Send email using EmailJS
       await emailjs.send(
-        serviceId,
-        templateId,
+        'service_01fq3n9',
+        'template_o9fnul9',
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -49,7 +43,7 @@ export default function HomePage() {
           message: formData.message,
           to_name: "Fann's Cleaning"
         },
-        publicKey
+        '9WWqIJU2uuaFXD'
       )
 
       setFormStatus({
@@ -57,7 +51,6 @@ export default function HomePage() {
         message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon!'
       })
 
-      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -282,7 +275,7 @@ export default function HomePage() {
       </section>
 
       <section id="contact" className="py-20 px-4 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white">
-        <div className="max-w-2xl mx-auto text-center space-y-8">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-6xl font-black">
             Ready for a Spotless Space?
           </h2>
@@ -290,8 +283,7 @@ export default function HomePage() {
             Get your free quote today!
           </p>
 
-          {/* Contact Form */}
-          <div className="bg-white rounded-3xl p-8 shadow-2xl text-left">
+          <div className="bg-white rounded-3xl p-8 shadow-2xl text-left max-w-2xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
@@ -401,7 +393,7 @@ export default function HomePage() {
             </form>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+12815551234" className="bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all">
               📞 Call (281) 555-1234
             </a>
