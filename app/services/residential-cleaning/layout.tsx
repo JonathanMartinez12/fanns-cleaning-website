@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Residential House Cleaning Services | Fann's Cleaning",
     description: "Trusted residential cleaning for Montgomery County homes. Routine maintenance, deep cleaning, move in/out service. Pet-friendly, eco-conscious products.",
-    url: "https://fanns-cleaning.vercel.app/services/residential-cleaning",
+    url: "https://fannscleaningservices.com/services/residential-cleaning",
   },
 };
 
@@ -26,19 +26,19 @@ export default function ResidentialCleaningLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://fanns-cleaning.vercel.app'
+        item: 'https://fannscleaningservices.com'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Services',
-        item: 'https://fanns-cleaning.vercel.app/services'
+        item: 'https://fannscleaningservices.com/services'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Residential Cleaning',
-        item: 'https://fanns-cleaning.vercel.app/services/residential-cleaning'
+        item: 'https://fannscleaningservices.com/services/residential-cleaning'
       }
     ]
   };
