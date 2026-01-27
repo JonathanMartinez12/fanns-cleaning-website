@@ -1,0 +1,13 @@
+# Fann's Cleaning Services - Robots.txt
+# Allow all search engines to crawl our site
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://fanns-cleaning.vercel.app/sitemap.xml
