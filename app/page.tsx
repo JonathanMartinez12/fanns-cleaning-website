@@ -4,11 +4,26 @@ import { useEffect, useState, useRef, FormEvent } from 'react';
 import Image from 'next/image';
 import emailjs from '@emailjs/browser';
 
-// EmailJS Configuration
+// EmailJS Configuration - Debug: log if vars are set
 const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
 const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
 const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
 const TEST_MODE = process.env.NEXT_PUBLIC_EMAILJS_TEST_MODE === 'true';
+
+// Initialize EmailJS
+if (typeof window !== 'undefined' && EMAILJS_PUBLIC_KEY) {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+}
+
+// Debug logging (remove in production later)
+if (typeof window !== 'undefined') {
+  console.log('[EmailJS Debug] Config loaded:', {
+    serviceId: EMAILJS_SERVICE_ID ? 'SET' : 'NOT SET',
+    templateId: EMAILJS_TEMPLATE_ID ? 'SET' : 'NOT SET',
+    publicKey: EMAILJS_PUBLIC_KEY ? 'SET' : 'NOT SET',
+    testMode: TEST_MODE
+  });
+}
 
 // Form state interface
 interface FormData {
@@ -112,6 +127,8 @@ export default function HomePage() {
   // Handle form submission
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log('[EmailJS Debug] Form submitted, starting process...');
+    console.log('[EmailJS Debug] Form data:', formData);
     setFormState({ status: 'submitting', errorMessage: '' });
 
     // Test mode error simulation
@@ -152,6 +169,11 @@ export default function HomePage() {
 
     // Check if EmailJS is configured
     if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.log('[EmailJS Debug] Missing configuration:', {
+        serviceId: !EMAILJS_SERVICE_ID,
+        templateId: !EMAILJS_TEMPLATE_ID,
+        publicKey: !EMAILJS_PUBLIC_KEY
+      });
       setFormState({
         status: 'error',
         errorMessage: 'Email service is not configured. Please contact us directly at fannsclean23@gmail.com',
@@ -169,13 +191,16 @@ export default function HomePage() {
         message: formData.message,
       };
 
-      await emailjs.send(
+      console.log('[EmailJS Debug] Sending email with params:', templateParams);
+
+      const response = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         templateParams,
         EMAILJS_PUBLIC_KEY
       );
 
+      console.log('[EmailJS Debug] Email sent successfully:', response);
       setFormState({ status: 'success', errorMessage: '' });
       setFormData({
         fullName: '',
@@ -184,8 +209,10 @@ export default function HomePage() {
         serviceType: 'Residential Cleaning',
         message: '',
       });
-    } catch (error) {
-      console.error('EmailJS Error:', error);
+    } catch (error: unknown) {
+      console.error('[EmailJS Debug] Error sending email:', error);
+      console.error('[EmailJS Debug] Error type:', typeof error);
+      console.error('[EmailJS Debug] Error details:', JSON.stringify(error, null, 2));
 
       let errorMessage = 'Failed to send message. Please try again or contact us directly.';
 
