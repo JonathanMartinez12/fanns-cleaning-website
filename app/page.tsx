@@ -1,7 +1,30 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, FormEvent } from 'react';
 import Image from 'next/image';
+import emailjs from '@emailjs/browser';
+
+// EmailJS Configuration
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
+const TEST_MODE = process.env.NEXT_PUBLIC_EMAILJS_TEST_MODE === 'true';
+
+// Form state interface
+interface FormData {
+  fullName: string;
+  email: string;
+  phone: string;
+  serviceType: string;
+  message: string;
+}
+
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
+
+interface FormState {
+  status: FormStatus;
+  errorMessage: string;
+}
 
 // Custom hook for scroll-triggered animations
 function useScrollAnimation() {
@@ -63,6 +86,123 @@ export default function HomePage() {
   const [testimonialsRef, testimonialsVisible] = useScrollAnimation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Contact form state
+  const formRef = useRef<HTMLFormElement>(null);
+  const [formData, setFormData] = useState<FormData>({
+    fullName: '',
+    email: '',
+    phone: '',
+    serviceType: 'Residential Cleaning',
+    message: '',
+  });
+  const [formState, setFormState] = useState<FormState>({
+    status: 'idle',
+    errorMessage: '',
+  });
+
+  // Handle form input changes
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormState({ status: 'submitting', errorMessage: '' });
+
+    // Test mode error simulation
+    if (TEST_MODE) {
+      // Simulate network delay
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      if (formData.email === 'test-error@test.com') {
+        setFormState({
+          status: 'error',
+          errorMessage: 'TEST MODE: Simulated network/service error. The email service is temporarily unavailable.',
+        });
+        return;
+      }
+
+      if (formData.email === 'test-invalid@test.com') {
+        setFormState({
+          status: 'error',
+          errorMessage: 'TEST MODE: Simulated invalid template error. Please check your EmailJS template configuration.',
+        });
+        return;
+      }
+
+      // If no test error triggered, simulate success
+      if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+        console.log('TEST MODE: Form submitted successfully (keys not configured)', formData);
+        setFormState({ status: 'success', errorMessage: '' });
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          serviceType: 'Residential Cleaning',
+          message: '',
+        });
+        return;
+      }
+    }
+
+    // Check if EmailJS is configured
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      setFormState({
+        status: 'error',
+        errorMessage: 'Email service is not configured. Please contact us directly at fannsclean23@gmail.com',
+      });
+      return;
+    }
+
+    try {
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.fullName,
+        from_email: formData.email,
+        phone: formData.phone || 'Not provided',
+        service_type: formData.serviceType,
+        message: formData.message,
+      };
+
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setFormState({ status: 'success', errorMessage: '' });
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        serviceType: 'Residential Cleaning',
+        message: '',
+      });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+
+      let errorMessage = 'Failed to send message. Please try again or contact us directly.';
+
+      if (error instanceof Error) {
+        // Handle specific EmailJS errors
+        if (error.message.includes('service_id')) {
+          errorMessage = 'Email service configuration error. Please contact us directly at fannsclean23@gmail.com';
+        } else if (error.message.includes('template_id')) {
+          errorMessage = 'Email template error. Please contact us directly at fannsclean23@gmail.com';
+        } else if (error.message.includes('network')) {
+          errorMessage = 'Network error. Please check your connection and try again.';
+        }
+      }
+
+      setFormState({ status: 'error', errorMessage });
+    }
+  };
 
   // Handle scroll for navbar background
   useEffect(() => {
@@ -769,48 +909,116 @@ export default function HomePage() {
           </div>
 
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 hover:shadow-blue-500/20 transition-shadow duration-300">
-            <form className="space-y-6">
+            {/* Success Message */}
+            {formState.status === 'success' && (
+              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl animate-fade-in">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-green-800">Message Sent Successfully!</h3>
+                    <p className="text-green-600 text-sm">We'll get back to you within 24 hours.</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {formState.status === 'error' && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl animate-fade-in">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-red-800">Failed to Send Message</h3>
+                    <p className="text-red-600 text-sm">{formState.errorMessage}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Test Mode Indicator */}
+            {TEST_MODE && (
+              <div className="mb-6 p-3 bg-yellow-50 border border-yellow-200 rounded-xl">
+                <div className="flex items-center gap-2 text-yellow-800 text-sm">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <span><strong>Test Mode Active</strong> - Use test-error@test.com or test-invalid@test.com to simulate errors</span>
+                </div>
+              </div>
+            )}
+
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="animate-slide-up animation-delay-100">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="fullName" className="block text-sm font-semibold text-gray-700 mb-2">
                     Full Name *
                   </label>
                   <input
                     type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleInputChange}
                     placeholder="John Smith"
-                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300"
+                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300 disabled:bg-gray-100 disabled:cursor-not-allowed"
                     required
+                    disabled={formState.status === 'submitting'}
                   />
                 </div>
                 <div className="animate-slide-up animation-delay-200">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                     Email Address *
                   </label>
                   <input
                     type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="john@example.com"
-                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300"
+                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300 disabled:bg-gray-100 disabled:cursor-not-allowed"
                     required
+                    disabled={formState.status === 'submitting'}
                   />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="animate-slide-up animation-delay-300">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
                     Phone Number
                   </label>
                   <input
                     type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     placeholder="(555) 123-4567"
-                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300"
+                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    disabled={formState.status === 'submitting'}
                   />
                 </div>
                 <div className="animate-slide-up animation-delay-400">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="serviceType" className="block text-sm font-semibold text-gray-700 mb-2">
                     Service Type
                   </label>
-                  <select className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300">
+                  <select
+                    id="serviceType"
+                    name="serviceType"
+                    value={formData.serviceType}
+                    onChange={handleInputChange}
+                    className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    disabled={formState.status === 'submitting'}
+                  >
                     <option>Residential Cleaning</option>
                     <option>Commercial Cleaning</option>
                     <option>Deep Cleaning</option>
@@ -820,26 +1028,44 @@ export default function HomePage() {
               </div>
 
               <div className="animate-slide-up animation-delay-500">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
                   Tell Us About Your Needs *
                 </label>
                 <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   placeholder="Please describe your cleaning needs, property size, and any specific requirements..."
                   rows={5}
-                  className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none hover:border-gray-300"
+                  className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none hover:border-gray-300 disabled:bg-gray-100 disabled:cursor-not-allowed"
                   required
+                  disabled={formState.status === 'submitting'}
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-800 to-indigo-800 text-white py-5 rounded-lg font-semibold text-lg shadow-xl shadow-blue-700/25 hover:shadow-2xl hover:shadow-blue-700/40 hover:scale-105 transition-all duration-300 relative overflow-hidden group animate-slide-up animation-delay-600"
+                disabled={formState.status === 'submitting'}
+                className="w-full bg-gradient-to-r from-blue-800 to-indigo-800 text-white py-5 rounded-lg font-semibold text-lg shadow-xl shadow-blue-700/25 hover:shadow-2xl hover:shadow-blue-700/40 hover:scale-105 transition-all duration-300 relative overflow-hidden group animate-slide-up animation-delay-600 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <span className="relative flex items-center justify-center gap-2">
-                  Get Your Free Quote
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  {formState.status === 'submitting' ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Get Your Free Quote
+                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </>
+                  )}
                 </span>
               </button>
 
