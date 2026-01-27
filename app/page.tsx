@@ -253,19 +253,17 @@ export default function HomePage() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group">
-              <div className={`w-10 h-10 rounded-lg transition-all duration-300 flex items-center justify-center ${
-                isScrolled
-                  ? 'bg-gradient-to-br from-blue-700 to-indigo-800'
-                  : 'bg-white/20 backdrop-blur-sm'
-              }`}>
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
+              <Image
+                src="/fannlogo.png"
+                alt="Fann's Cleaning Logo"
+                width={44}
+                height={44}
+                className="rounded-lg transition-all duration-300 group-hover:scale-105"
+              />
               <div className={`text-2xl font-bold transition-colors ${
                 isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
-                Fann's Cleaning
+                Fann&apos;s Cleaning
               </div>
             </a>
 
