@@ -173,8 +173,16 @@ body {
 
 .animate-scroll {
   animation: scroll-left 40s linear infinite;
+  will-change: transform;
 }
 
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Faster scroll on mobile for better visibility */
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation: scroll-left 25s linear infinite;
+  }
 }

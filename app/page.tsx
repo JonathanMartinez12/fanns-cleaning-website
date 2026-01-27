@@ -452,14 +452,14 @@ export default function HomePage() {
           <div className="inline-block mb-6 px-5 py-2 bg-blue-500/20 backdrop-blur-sm rounded-full text-sm font-medium animate-slide-down border border-blue-400/30">
             <span className="text-blue-300">Premium Cleaning Services</span>
             <span className="text-white/60 mx-2">•</span>
-            <span className="text-white/90">Montgomery County & Surrounding Areas</span>
+            <span className="text-white/90">Montgomery County, North Harris County & Surrounding Areas</span>
           </div>
           <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight animate-slide-up">
             Professional Cleaning<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">You Can Trust</span>
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed text-slate-200 animate-slide-up animation-delay-200">
-            Over 10 years delivering spotless homes and offices across Tomball, Magnolia, The Woodlands, and beyond.
+            Over 10 years delivering spotless homes and offices across Montgomery County, North Harris County, and surrounding areas.
             <span className="block mt-2 text-lg text-slate-300">Pet-friendly • Transparent Pricing • Personalized Service</span>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up animation-delay-400">
@@ -498,7 +498,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div ref={servicesRef} className="grid md:grid-cols-3 gap-8">
+          <div ref={servicesRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: "home",
@@ -509,20 +509,44 @@ export default function HomePage() {
                 image: "/livingroom.png"
               },
               {
-                icon: "building",
-                title: "Pressure Washing & Window Cleaning",
-                desc: "Restore your property's curb appeal with professional pressure washing for driveways, patios, and siding. Crystal-clear window cleaning inside and out.",
-                features: ["Driveway Washing", "Patio Cleaning", "Siding Restoration", "Interior Windows", "Exterior Windows"],
-                color: "from-slate-600 to-slate-700",
-                image: "/window_cleaning.png"
-              },
-              {
                 icon: "sparkles",
-                title: "Specialized Commercial Cleaning",
+                title: "Commercial Cleaning",
                 desc: "Professional office and business cleaning tailored to your workplace needs. Keep your commercial space spotless with our reliable after-hours service and attention to detail.",
                 features: ["Office Spaces", "Retail Stores", "Medical Facilities", "After-Hours Service", "Professional Environment Care"],
                 color: "from-teal-500 to-cyan-600",
                 image: "/commercial_cleaning.png"
+              },
+              {
+                icon: "construction",
+                title: "Post & New Construction",
+                desc: "Thorough cleanup for newly built or renovated spaces. We remove construction dust, debris, and residue to prepare your property for move-in or showcase.",
+                features: ["Dust & Debris Removal", "Window Cleaning", "Surface Polishing", "Final Touch-Ups", "Move-In Ready"],
+                color: "from-amber-500 to-orange-600",
+                image: "/new_construction_cleaning.png"
+              },
+              {
+                icon: "water",
+                title: "Pressure Washing",
+                desc: "Restore your property's curb appeal with professional pressure washing. We clean driveways, patios, decks, siding, and more to remove dirt, grime, and stains.",
+                features: ["Driveway Cleaning", "Patio & Deck Washing", "Siding Restoration", "Fence Cleaning", "Concrete Surfaces"],
+                color: "from-blue-500 to-cyan-600",
+                image: "/window_cleaning.png"
+              },
+              {
+                icon: "gutter",
+                title: "Gutter Cleaning",
+                desc: "Protect your home from water damage with professional gutter cleaning. We remove leaves, debris, and buildup to ensure proper drainage and prevent costly repairs.",
+                features: ["Debris Removal", "Downspout Clearing", "Gutter Flushing", "Inspection", "Preventive Maintenance"],
+                color: "from-emerald-500 to-green-600",
+                image: "/deep_cleaning.png"
+              },
+              {
+                icon: "window",
+                title: "Window Cleaning",
+                desc: "Crystal-clear windows inside and out. Our professional window cleaning service removes streaks, spots, and buildup for a spotless view every time.",
+                features: ["Interior Windows", "Exterior Windows", "Screen Cleaning", "Track Cleaning", "Streak-Free Finish"],
+                color: "from-slate-600 to-slate-700",
+                image: "/window_cleaning.png"
               },
             ].map((service, i) => (
               <div
@@ -551,14 +575,29 @@ export default function HomePage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                       </svg>
                     )}
-                    {service.icon === 'building' && (
+                    {service.icon === 'sparkles' && (
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                      </svg>
+                    )}
+                    {service.icon === 'construction' && (
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
                     )}
-                    {service.icon === 'sparkles' && (
+                    {service.icon === 'water' && (
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                    )}
+                    {service.icon === 'gutter' && (
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4h18M3 4v16l9-4 9 4V4M3 4l9 4 9-4" />
+                      </svg>
+                    )}
+                    {service.icon === 'window' && (
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 12h16M12 4v16" />
                       </svg>
                     )}
                   </div>
@@ -650,9 +689,9 @@ export default function HomePage() {
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-400 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
             </div>
             <div className="relative">
-              <h3 className="text-3xl font-bold mb-4">Proudly Serving Montgomery County & Surrounding Areas</h3>
+              <h3 className="text-3xl font-bold mb-4">Proudly Serving Montgomery County, North Harris County & Surrounding Areas</h3>
               <p className="text-xl text-slate-200 max-w-2xl mx-auto">
-                Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX.
+                Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, Pinehurst, and surrounding areas in TX.
                 <span className="block mt-2 text-lg text-blue-300">As a locally owned business, we're not just cleaning homes and offices—we're building lasting relationships.</span>
               </p>
             </div>
@@ -680,7 +719,7 @@ export default function HomePage() {
               { img: "/nice_kitchen.png", title: "Sparkling Clean Kitchen" },
               { img: "/bathroom.png", title: "Pristine Bathroom" },
               { img: "/livingroom.png", title: "Fresh Living Space" },
-              { img: "/post_construction.png", title: "Post-Construction Clean" },
+              { img: "/new_construction_cleaning.png", title: "New Construction Clean" },
               { img: "/livingroom_2.png", title: "Spotless Living Room" },
               { img: "/commercial_cleaning.png", title: "Commercial Space Cleaning" },
               { img: "/deep_cleaning.png", title: "Deep Cleaning Service" },
@@ -800,7 +839,7 @@ export default function HomePage() {
                 ].map((review, i) => (
                   <div
                     key={`first-${i}`}
-                    className="flex-shrink-0 w-96 mx-4 bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-slate-200 transition-all duration-300"
+                    className="flex-shrink-0 w-72 sm:w-80 md:w-96 mx-2 sm:mx-4 bg-white rounded-xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-slate-200 transition-all duration-300"
                   >
                     <div className="flex gap-1 mb-4">
                       {[...Array(5)].map((_, idx) => (
@@ -874,7 +913,7 @@ export default function HomePage() {
                 ].map((review, i) => (
                   <div
                     key={`second-${i}`}
-                    className="flex-shrink-0 w-96 mx-4 bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-slate-200 transition-all duration-300"
+                    className="flex-shrink-0 w-72 sm:w-80 md:w-96 mx-2 sm:mx-4 bg-white rounded-xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-slate-200 transition-all duration-300"
                   >
                     <div className="flex gap-1 mb-4">
                       {[...Array(5)].map((_, idx) => (
@@ -1139,7 +1178,7 @@ export default function HomePage() {
                 <h3 className="text-2xl font-bold text-white">Fann's Cleaning</h3>
               </div>
               <p className="text-slate-400 leading-relaxed mb-4">
-                Professional cleaning services for homes and businesses in Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX.
+                Professional cleaning services for homes and businesses in Montgomery County, North Harris County, and surrounding areas in TX.
               </p>
               {/* Social Media Links */}
               <div className="flex gap-3">
@@ -1197,7 +1236,7 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span>Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX</span>
+                  <span>Serving Montgomery County, North Harris County & surrounding areas in TX</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <svg className="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
