@@ -492,7 +492,7 @@ export default function HomePage() {
               Comprehensive Cleaning Solutions
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              From routine maintenance to specialized services, we customize every job to meet your unique needs. Whether it's your home, office, or post-construction project, we treat every property like our own.
+              From routine house cleaning to specialized commercial and janitorial services, we customize every job to meet your unique needs. Whether it&apos;s your home, apartment, office, restaurant, or post-construction project — hire cleaning services you can trust.
             </p>
           </div>
 
@@ -501,23 +501,23 @@ export default function HomePage() {
               {
                 icon: "home",
                 title: "Residential Cleaning",
-                desc: "Transform your home into a sparkling sanctuary with routine maintenance, deep-cleaning, upholstery, and floor care. Flexible scheduling with weekly or one-time options to fit your lifestyle.",
-                features: ["Routine Maintenance", "Deep Cleaning", "Upholstery Cleaning", "Floor Care", "Weekly or One-Time Options"],
+                desc: "Transform your home into a sparkling sanctuary with our residential house cleaning services in Magnolia TX and surrounding areas. From routine maintenance to deep-cleaning, upholstery, and floor care — including apartment cleaning — we offer flexible scheduling with weekly or one-time options.",
+                features: ["Routine Home Maintenance", "Deep Cleaning", "Apartment Cleaning", "Upholstery & Floor Care", "Weekly or One-Time Options"],
                 color: "from-blue-700 to-indigo-800",
                 image: "/livingroom.png"
               },
               {
                 icon: "sparkles",
                 title: "Commercial Cleaning",
-                desc: "Professional office and business cleaning tailored to your workplace needs. Keep your commercial space spotless with our reliable after-hours service and attention to detail.",
-                features: ["Office Spaces", "Retail Stores", "Medical Facilities", "After-Hours Service", "Professional Environment Care"],
+                desc: "Affordable commercial cleaning services for offices, commercial buildings, and restaurants in Magnolia TX, Pinehurst TX, and the 77377 area. From light commercial cleaning to full janitorial services, we keep your business spotless with reliable after-hours service.",
+                features: ["Office & Commercial Buildings", "Restaurant Cleaning", "Janitorial Services", "Light Commercial Cleaning", "After-Hours Service"],
                 color: "from-teal-500 to-cyan-600",
                 image: "/commercial_cleaning.png"
               },
               {
                 icon: "construction",
                 title: "Post & New Construction",
-                desc: "Thorough cleanup for newly built or renovated spaces. We remove construction dust, debris, and residue to prepare your property for move-in or showcase.",
+                desc: "Professional construction cleaning in Pinehurst TX and surrounding areas. Thorough cleanup for newly built or renovated spaces — we remove construction dust, debris, and residue to prepare your property for move-in or showcase.",
                 features: ["Dust & Debris Removal", "Window Cleaning", "Surface Polishing", "Final Touch-Ups", "Move-In Ready"],
                 color: "from-amber-500 to-orange-600",
                 image: "/new_construction_cleaning.png"
@@ -689,8 +689,8 @@ export default function HomePage() {
             <div className="relative">
               <h3 className="text-3xl font-bold mb-4">Proudly Serving Montgomery County, North Harris County & Surrounding Areas</h3>
               <p className="text-xl text-slate-200 max-w-2xl mx-auto">
-                Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, Pinehurst, and surrounding areas in TX.
-                <span className="block mt-2 text-lg text-blue-300">As a locally owned business, we're not just cleaning homes and offices—we're building lasting relationships.</span>
+                Serving Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, Pinehurst, and surrounding areas in TX — including zip codes 77375, 77377, 77354, 77355, 77365, and 77338.
+                <span className="block mt-2 text-lg text-blue-300">As a locally owned business, we&apos;re not just cleaning homes and offices—we&apos;re building lasting relationships.</span>
               </p>
             </div>
           </div>
@@ -765,6 +765,67 @@ export default function HomePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE AREAS - SEO keyword section */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="inline-block px-5 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-medium mb-4 border border-blue-100">
+              Where We Serve
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
+              Cleaning Services Across Greater Houston
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Fann&apos;s Cleaning Services proudly serves residential and commercial clients throughout Montgomery County, North Harris County, and surrounding communities.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                area: "Magnolia, TX",
+                zip: "77354 / 77355",
+                services: "Residential house cleaning, apartment cleaning, cleaners for apartment move out, restaurant cleaning, commercial building cleaning services"
+              },
+              {
+                area: "Tomball, TX",
+                zip: "77375 / 77377",
+                services: "Affordable commercial cleaning services, janitorial services, house cleaning service, commercial deep cleaning, restaurant cleaning services"
+              },
+              {
+                area: "Pinehurst, TX",
+                zip: "77362",
+                services: "Commercial cleaning, construction cleaning, move in move out cleaning, residential cleaning services"
+              },
+              {
+                area: "The Woodlands, TX",
+                zip: "77380 / 77381 / 77382",
+                services: "Residential home cleaning, office cleaning, light commercial cleaning, deep cleaning services"
+              },
+              {
+                area: "Conroe / Willis, TX",
+                zip: "77301 / 77365 / 77378",
+                services: "House cleaning service, cleaning service bundles, affordable residential cleaning, commercial cleaning"
+              },
+              {
+                area: "Spring / Cypress, TX",
+                zip: "77338 / 77429",
+                services: "Cleaning service bundles, apartment cleaning services, residential cleaning, commercial cleaning"
+              }
+            ].map((location, i) => (
+              <div
+                key={i}
+                className="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-xl p-6 hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300"
+              >
+                <h3 className="text-xl font-bold text-slate-900 mb-1">{location.area}</h3>
+                <p className="text-sm text-blue-700 font-medium mb-3">Zip codes: {location.zip}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{location.services}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1084,9 +1145,15 @@ export default function HomePage() {
                     disabled={formState.status === 'submitting'}
                   >
                     <option>Residential Cleaning</option>
+                    <option>Apartment Cleaning</option>
                     <option>Commercial Cleaning</option>
+                    <option>Janitorial Services</option>
+                    <option>Restaurant Cleaning</option>
                     <option>Deep Cleaning</option>
                     <option>Move-In/Move-Out</option>
+                    <option>Construction Cleaning</option>
+                    <option>Pressure Washing</option>
+                    <option>Window Cleaning</option>
                   </select>
                 </div>
               </div>

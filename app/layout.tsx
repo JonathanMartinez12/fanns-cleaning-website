@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://fanns-cleaning.vercel.app'),
   title: "Professional Cleaning Services in Tomball, Magnolia, The Woodlands TX | Fann's Cleaning",
   description: "Expert cleaning services in Tomball, Magnolia & The Woodlands TX. 10+ years experience. Residential, commercial & deep cleaning. Pet-friendly. Call (346) 588-0262",
-  keywords: "cleaning services Tomball TX, house cleaning Tomball, maid service Tomball, cleaning services Magnolia TX, cleaning services The Woodlands, cleaning services Conroe, cleaning services Willis, cleaning services Cypress, cleaning services Spring TX, cleaning services Pinehurst, residential cleaning Montgomery County, commercial cleaning Tomball, office cleaning The Woodlands, deep cleaning services, move out cleaning, move in cleaning, pet friendly cleaning, eco-friendly cleaning products, professional cleaners near me, house cleaning service near me, Montgomery County cleaning services, affordable cleaning services Texas",
+  keywords: "cleaning services Tomball TX, house cleaning Tomball, maid service Tomball, cleaning services Magnolia TX, cleaning services The Woodlands, cleaning services Conroe, cleaning services Willis, cleaning services Cypress, cleaning services Spring TX, cleaning services Pinehurst, residential cleaning Montgomery County, commercial cleaning Tomball, office cleaning The Woodlands, deep cleaning services, move out cleaning, move in cleaning, pet friendly cleaning, eco-friendly cleaning products, professional cleaners near me, house cleaning service near me, Montgomery County cleaning services, affordable cleaning services Texas, affordable commercial cleaning services 77377, apartment cleaning services magnolia tx, apartment cleaning company magnolia tx, residential cleaning magnolia tx, residential house cleaning magnolia tx, residential home cleaning services magnolia tx, cleaning residential services magnolia tx, commercial building cleaning services magnolia tx, commercial cleaning company near me 77377, commercial deep cleaning services 77377, commercial cleaning pinehurst tx, commercial cleaning business magnolia tx, construction cleaning pinehurst tx, janitorial services 77377, restaurant cleaning services 77377, light commercial cleaning, move in move out cleaning pinehurst tx, hire cleaning services, cleaning service bundles 77338, cleaning services magnolia tx, cleaners for apartment move out magnolia tx, cleaning service bundles 77365, fann's cleaning services cleaning service tomball, house cleaning service, restaurant cleaning magnolia tx",
   authors: [{ name: "Fann's Cleaning Services" }],
   alternates: {
     canonical: '/',
@@ -59,7 +59,7 @@ export default function RootLayout({
     '@id': 'https://fanns-cleaning.vercel.app',
     name: "Fann's Cleaning Services",
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&h=630&fit=crop',
-    description: 'Professional cleaning services for homes and businesses in Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX. Over 10 years of experience with pet-friendly products.',
+    description: 'Professional cleaning services for homes and businesses in Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX. Affordable residential cleaning, commercial building cleaning, janitorial services, apartment cleaning, restaurant cleaning, construction cleaning, and move-in/move-out cleaning. Serving zip codes 77375, 77377, 77354, 77338 and surrounding areas. Over 10 years of experience with pet-friendly products.',
     founder: {
       '@type': 'Person',
       name: 'Courtney Gordy'
@@ -168,6 +168,46 @@ export default function RootLayout({
             '@type': 'Service',
             name: 'Deep Cleaning',
             description: 'Intensive cleaning services for kitchens, bathrooms, carpets, and complete home sanitization'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Move-In/Move-Out Cleaning',
+            description: 'Thorough move in move out cleaning services for apartments and homes in Magnolia, Pinehurst, and surrounding TX areas'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Janitorial Services',
+            description: 'Professional janitorial services for offices, restaurants, and commercial buildings in the 77377 and 77375 zip code areas'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Construction Cleaning',
+            description: 'Post-construction and new construction cleaning services in Pinehurst TX and surrounding areas'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Apartment Cleaning',
+            description: 'Affordable apartment cleaning services and residential house cleaning in Magnolia TX'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Restaurant Cleaning',
+            description: 'Restaurant and light commercial cleaning services in the 77377 area'
           }
         }
       ]
