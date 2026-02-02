@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Woodlands TX Cleaning Services | Fann's Cleaning",
     description: "Professional residential & commercial cleaning in The Woodlands, Texas. Trusted by families across all villages. Pet-friendly, eco-conscious cleaning.",
-    url: "https://fanns-cleaning.vercel.app/locations/the-woodlands-tx",
+    url: "https://fannscleaningservices.com/locations/the-woodlands-tx",
   },
 };
 
@@ -26,19 +26,19 @@ export default function TheWoodlandsLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://fanns-cleaning.vercel.app'
+        item: 'https://fannscleaningservices.com'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Locations',
-        item: 'https://fanns-cleaning.vercel.app/locations'
+        item: 'https://fannscleaningservices.com/locations'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'The Woodlands TX',
-        item: 'https://fanns-cleaning.vercel.app/locations/the-woodlands-tx'
+        item: 'https://fannscleaningservices.com/locations/the-woodlands-tx'
       }
     ]
   };
@@ -47,7 +47,7 @@ export default function TheWoodlandsLayout({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: "Fann's Cleaning Services - The Woodlands",
-    image: 'https://fanns-cleaning.vercel.app/livingroom.png',
+    image: 'https://fannscleaningservices.com/livingroom.png',
     description: 'Professional cleaning services in The Woodlands, TX. Residential, commercial, and deep cleaning serving all villages.',
     address: {
       '@type': 'PostalAddress',
@@ -63,7 +63,7 @@ export default function TheWoodlandsLayout({
     },
     telephone: '+1-346-588-0262',
     email: 'fannsclean23@gmail.com',
-    url: 'https://fanns-cleaning.vercel.app/locations/the-woodlands-tx',
+    url: 'https://fannscleaningservices.com/locations/the-woodlands-tx',
     priceRange: '$$',
     areaServed: {
       '@type': 'City',

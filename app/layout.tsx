@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fanns-cleaning.vercel.app'),
+  metadataBase: new URL('https://fannscleaningservices.com'),
   title: "Professional Cleaning Services in Tomball, Magnolia, The Woodlands TX | Fann's Cleaning",
   description: "Expert cleaning services in Tomball, Magnolia & The Woodlands TX. 10+ years experience. Residential, commercial & deep cleaning. Pet-friendly. Call (346) 588-0262",
   keywords: "cleaning services Tomball TX, house cleaning Tomball, maid service Tomball, cleaning services Magnolia TX, cleaning services The Woodlands, cleaning services Conroe, cleaning services Willis, cleaning services Cypress, cleaning services Spring TX, cleaning services Pinehurst, residential cleaning Montgomery County, commercial cleaning Tomball, office cleaning The Woodlands, deep cleaning services, move out cleaning, move in cleaning, pet friendly cleaning, eco-friendly cleaning products, professional cleaners near me, house cleaning service near me, Montgomery County cleaning services, affordable cleaning services Texas, affordable commercial cleaning services 77377, apartment cleaning services magnolia tx, apartment cleaning company magnolia tx, residential cleaning magnolia tx, residential house cleaning magnolia tx, residential home cleaning services magnolia tx, cleaning residential services magnolia tx, commercial building cleaning services magnolia tx, commercial cleaning company near me 77377, commercial deep cleaning services 77377, commercial cleaning pinehurst tx, commercial cleaning business magnolia tx, construction cleaning pinehurst tx, janitorial services 77377, restaurant cleaning services 77377, light commercial cleaning, move in move out cleaning pinehurst tx, hire cleaning services, cleaning service bundles 77338, cleaning services magnolia tx, cleaners for apartment move out magnolia tx, cleaning service bundles 77365, fann's cleaning services cleaning service tomball, house cleaning service, restaurant cleaning magnolia tx",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Professional Cleaning Services - Tomball, Magnolia, The Woodlands & More | Fann's Cleaning",
     description: "Over 10 years delivering spotless homes & offices in Montgomery County. Pet-friendly products, transparent pricing, personalized service. Trusted by 500+ clients. Call (346) 588-0262 today!",
-    url: "https://fanns-cleaning.vercel.app",
+    url: "https://fannscleaningservices.com",
     siteName: "Fann's Cleaning Services",
     images: [
       {
@@ -56,7 +56,7 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://fanns-cleaning.vercel.app',
+    '@id': 'https://fannscleaningservices.com',
     name: "Fann's Cleaning Services",
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&h=630&fit=crop',
     description: 'Professional cleaning services for homes and businesses in Tomball, Magnolia, Conroe, Willis, Cypress, The Woodlands, Spring, and Pinehurst, TX. Affordable residential cleaning, commercial building cleaning, janitorial services, apartment cleaning, restaurant cleaning, construction cleaning, and move-in/move-out cleaning. Serving zip codes 77375, 77377, 77354, 77338 and surrounding areas. Over 10 years of experience with pet-friendly products.',
@@ -69,7 +69,7 @@ export default function RootLayout({
       name: "Fann's Cleaning Services",
       logo: {
         '@type': 'ImageObject',
-        url: 'https://fanns-cleaning.vercel.app/logo.png'
+        url: 'https://fannscleaningservices.com/logo.png'
       }
     },
     address: {
@@ -115,7 +115,7 @@ export default function RootLayout({
     ],
     telephone: '+1-346-588-0262',
     email: 'fannsclean23@gmail.com',
-    url: 'https://fanns-cleaning.vercel.app',
+    url: 'https://fannscleaningservices.com',
     priceRange: '$$',
     aggregateRating: {
       '@type': 'AggregateRating',

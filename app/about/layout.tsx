@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Fann's Cleaning Services - Montgomery County TX",
     description: "Founded by Courtney Gordy with 10+ years of experience. Professional cleaning with transparency, exceptional service, and pet-friendly products.",
-    url: "https://fanns-cleaning.vercel.app/about",
+    url: "https://fannscleaningservices.com/about",
   },
 };
 
@@ -26,13 +26,13 @@ export default function AboutLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://fanns-cleaning.vercel.app'
+        item: 'https://fannscleaningservices.com'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'About',
-        item: 'https://fanns-cleaning.vercel.app/about'
+        item: 'https://fannscleaningservices.com/about'
       }
     ]
   };

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tomball TX Cleaning Services | Fann's Cleaning",
     description: "Professional residential & commercial cleaning in Tomball, Texas. Trusted by local families for over a decade. Pet-friendly products, transparent pricing.",
-    url: "https://fanns-cleaning.vercel.app/locations/tomball-tx",
+    url: "https://fannscleaningservices.com/locations/tomball-tx",
   },
 };
 
@@ -26,19 +26,19 @@ export default function TomballLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://fanns-cleaning.vercel.app'
+        item: 'https://fannscleaningservices.com'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Locations',
-        item: 'https://fanns-cleaning.vercel.app/locations'
+        item: 'https://fannscleaningservices.com/locations'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Tomball TX',
-        item: 'https://fanns-cleaning.vercel.app/locations/tomball-tx'
+        item: 'https://fannscleaningservices.com/locations/tomball-tx'
       }
     ]
   };
@@ -47,7 +47,7 @@ export default function TomballLayout({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: "Fann's Cleaning Services - Tomball",
-    image: 'https://fanns-cleaning.vercel.app/livingroom.png',
+    image: 'https://fannscleaningservices.com/livingroom.png',
     description: 'Professional cleaning services in Tomball, TX. Residential, commercial, and deep cleaning with over 10 years of experience.',
     address: {
       '@type': 'PostalAddress',
@@ -63,7 +63,7 @@ export default function TomballLayout({
     },
     telephone: '+1-346-588-0262',
     email: 'fannsclean23@gmail.com',
-    url: 'https://fanns-cleaning.vercel.app/locations/tomball-tx',
+    url: 'https://fannscleaningservices.com/locations/tomball-tx',
     priceRange: '$$',
     areaServed: {
       '@type': 'City',

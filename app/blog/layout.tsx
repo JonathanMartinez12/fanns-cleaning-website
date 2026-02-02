@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cleaning Tips & Home Care Blog | Fann's Cleaning Services",
     description: "Expert cleaning tips and home care advice from professional cleaners serving Montgomery County TX.",
-    url: "https://fanns-cleaning.vercel.app/blog",
+    url: "https://fannscleaningservices.com/blog",
   },
 };
 
@@ -26,13 +26,13 @@ export default function BlogLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://fanns-cleaning.vercel.app'
+        item: 'https://fannscleaningservices.com'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: 'https://fanns-cleaning.vercel.app/blog'
+        item: 'https://fannscleaningservices.com/blog'
       }
     ]
   };
