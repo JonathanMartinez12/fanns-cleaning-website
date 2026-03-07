@@ -186,7 +186,7 @@ export default function HomePage() {
       const templateParams = {
         from_name: formData.fullName,
         from_email: formData.email,
-        phone: formData.phone || 'Not provided',
+        phone: formData.phone,
         service_type: formData.serviceType,
         message: formData.message,
       };
@@ -1119,7 +1119,7 @@ export default function HomePage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="animate-slide-up animation-delay-300">
                   <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone Number
+                    Phone Number *
                   </label>
                   <input
                     type="tel"
@@ -1129,6 +1129,7 @@ export default function HomePage() {
                     onChange={handleInputChange}
                     placeholder="(555) 123-4567"
                     className="w-full border-2 border-gray-200 rounded-xl p-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition hover:border-gray-300 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    required
                     disabled={formState.status === 'submitting'}
                   />
                 </div>
