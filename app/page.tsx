@@ -336,7 +336,7 @@ export default function HomePage() {
 
               {/* Portal Login */}
               <button
-                onClick={() => window.open('https://client.housecallpro.com/customer_portal/request-link?token=14c76e991ac74ff5ac785e04c0c4bd8b', '_blank')}
+                onClick={() => window.open('https://pro.housecallpro.com/app/settings/online_booking/settings/onboarding', '_blank')}
                 className="bg-[#0f77cc] text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
               >
                 LOG IN TO PORTAL
@@ -413,7 +413,7 @@ export default function HomePage() {
                     (346) 588-0262
                   </a>
                   <button
-                    onClick={() => { setIsMobileMenuOpen(false); window.open('https://client.housecallpro.com/customer_portal/request-link?token=14c76e991ac74ff5ac785e04c0c4bd8b', '_blank'); }}
+                    onClick={() => { setIsMobileMenuOpen(false); window.open('https://pro.housecallpro.com/app/settings/online_booking/settings/onboarding', '_blank'); }}
                     className="w-full text-center bg-[#0f77cc] text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all"
                   >
                     LOG IN TO PORTAL
