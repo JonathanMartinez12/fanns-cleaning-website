@@ -342,13 +342,6 @@ export default function HomePage() {
                 LOG IN TO PORTAL
               </button>
 
-              {/* Get Quote CTA */}
-              <a
-                href="#contact"
-                className="bg-gradient-to-r from-blue-800 to-indigo-800 text-white px-6 py-2.5 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-700/25 hover:scale-105 transition-all duration-300"
-              >
-                Get Free Quote
-              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -425,13 +418,6 @@ export default function HomePage() {
                   >
                     LOG IN TO PORTAL
                   </button>
-                  <a
-                    href="#contact"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-center bg-gradient-to-r from-blue-800 to-indigo-800 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition-all"
-                  >
-                    Get Free Quote
-                  </a>
                 </div>
               </div>
             </div>
