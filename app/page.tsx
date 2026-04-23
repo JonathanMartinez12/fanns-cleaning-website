@@ -847,8 +847,45 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Scrolling testimonials container */}
-          <div className="relative">
+          {/* Mobile: swipeable snap-scroll carousel */}
+          <div className="lg:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-6 px-6">
+            {[
+              { name: "Michael M.", text: "Needed a last minute clean of the house before the holidays. Kevin and his team made it quick and painless. The house was absolutely spotless. 10/10 recommended" },
+              { name: "Stephanie W.", text: "Today, two ladies came and organized two rooms in my home, and I couldn't be more pleased! One was hazardous to walk in, and I am so grateful for them! Thanks for always being available and sharing your gifts!!" },
+              { name: "Jake L.", text: "These guys came in clutch, on a last minute cleaning after our prescheduled contractor stood us up, and ghosted us. Fann's came in, on time, did an absolute stellar job, and left. I absolutely recommend, and will be using their services again." },
+              { name: "Jacy S.", text: "Very impressed with the job that was done on my house! They paid attention to all the details and got everything spotless!" },
+              { name: "Cristina E.", text: "They have always done a great job cleaning my home. I appreciate their services." },
+              { name: "Susan F.", text: "I called to hire Fann's for a deep clean of my house. I have 3 hairy dogs and a lot of dust, etc. They came within days and cleaned absolutely everything. My house is like brand new. I will definitely be hiring them long term!! Thank you so very much" },
+              { name: "Summer P.", text: "We needed a deep clean of our house on short notice. They didn't hesitate to fit us in the day we needed it. They did an amazing job. Very accommodating to our specific needs. Our house looks new again. Highly recommend them!" },
+              { name: "Rayne L.", text: "I had a deep cleaning done. They took their time and literally cleaned my house from top to bottom including my wall decor. I have tried other cleaning services and those people did not clean my house to my expectations. Fann Cleaning Service exceeded my expectations. The cleaners were very friendly and personable, and professional." },
+              { name: "Vickie M.", text: "Fann's Cleaning Service is outstanding in every way. Not only are they professional but also pay attention to detail. They bring their own supplies, equipment and plenty of elbow grease. They came out and gave us an estimate and were on time. They are honest and extremely trustworthy. We will definitely use their services again." },
+              { name: "Barbara W.", text: "I have been very happy with Fann's Cleaning Services since I started using them earlier this year. Great quality work and very dependable. Friendly and easy to work with." }
+            ].map((review, i) => (
+              <div key={i} className="snap-center flex-shrink-0 w-[85vw] bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex flex-col">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, idx) => (
+                    <svg key={idx} className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-slate-700 leading-relaxed text-[15px] flex-1">"{review.text}"</p>
+                <div className="flex items-center gap-3 pt-4 mt-4 border-t border-slate-100">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-700 to-indigo-800 flex items-center justify-center text-white font-bold text-base shadow-sm flex-shrink-0">
+                    {review.name[0]}
+                  </div>
+                  <div>
+                    <div className="font-bold text-slate-900 text-sm">{review.name}</div>
+                    <div className="text-xs text-slate-500">Verified Customer</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="lg:hidden text-center text-slate-500 text-sm mt-4 mb-2">← Swipe to read more reviews →</p>
+
+          {/* Desktop: auto-scrolling carousel */}
+          <div className="hidden lg:block relative">
             {/* Gradient overlays for fade effect */}
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white via-white to-transparent z-10"></div>
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white via-white to-transparent z-10"></div>
@@ -1006,7 +1043,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="hidden lg:block text-center mt-12">
             <p className="text-slate-600 text-sm">
               <span className="font-semibold text-slate-900">Verified Five-Star Reviews</span> • Hover to pause
             </p>
