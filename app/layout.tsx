@@ -1,36 +1,72 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const SITE_URL = 'https://fannscleaningservices.com';
+const OG_IMAGE = `${SITE_URL}/livingroom.png`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fannscleaningservices.com'),
-  title: "Professional Cleaning Services in Tomball, Magnolia, The Woodlands TX | Fann's Cleaning",
-  description: "Expert cleaning services in Tomball, Magnolia & The Woodlands TX. 10+ years experience. Residential, commercial & deep cleaning. Pet-friendly. Call (346) 588-0262",
-  keywords: "cleaning services Tomball TX, house cleaning Tomball, maid service Tomball, cleaning services Magnolia TX, cleaning services The Woodlands, cleaning services Conroe, cleaning services Willis, cleaning services Cypress, cleaning services Spring TX, cleaning services Pinehurst, residential cleaning Montgomery County, commercial cleaning Tomball, office cleaning The Woodlands, deep cleaning services, move out cleaning, move in cleaning, pet friendly cleaning, eco-friendly cleaning products, professional cleaners near me, house cleaning service near me, Montgomery County cleaning services, affordable cleaning services Texas, affordable commercial cleaning services 77377, apartment cleaning services magnolia tx, apartment cleaning company magnolia tx, residential cleaning magnolia tx, residential house cleaning magnolia tx, residential home cleaning services magnolia tx, cleaning residential services magnolia tx, commercial building cleaning services magnolia tx, commercial cleaning company near me 77377, commercial deep cleaning services 77377, commercial cleaning pinehurst tx, commercial cleaning business magnolia tx, construction cleaning pinehurst tx, janitorial services 77377, restaurant cleaning services 77377, light commercial cleaning, move in move out cleaning pinehurst tx, hire cleaning services, cleaning service bundles 77338, cleaning services magnolia tx, cleaners for apartment move out magnolia tx, cleaning service bundles 77365, fann's cleaning services cleaning service tomball, house cleaning service, restaurant cleaning magnolia tx",
-  authors: [{ name: "Fann's Cleaning Services" }],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Cleaning Services Tomball, Magnolia & The Woodlands TX | Fann's Cleaning",
+    template: "%s | Fann's Cleaning Services",
+  },
+  description:
+    "Top-rated house, office & deep cleaning in Tomball, Magnolia, The Woodlands and Montgomery County TX. 10+ years, pet-friendly, 500+ 5-star reviews. Free quote: (346) 588-0262.",
+  keywords: [
+    "cleaning services Tomball TX",
+    "house cleaning Magnolia TX",
+    "maid service The Woodlands",
+    "commercial cleaning Montgomery County",
+    "deep cleaning Tomball",
+    "move out cleaning Pinehurst TX",
+    "janitorial services 77375",
+    "pet-friendly cleaning Houston",
+    "post-construction cleaning Tomball",
+    "office cleaning The Woodlands TX",
+  ],
+  authors: [{ name: "Fann's Cleaning Services", url: SITE_URL }],
+  creator: "Fann's Cleaning Services",
+  publisher: "Fann's Cleaning Services",
+  category: 'Home Services',
+  applicationName: "Fann's Cleaning Services",
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/fannlogo.png',
+    shortcut: '/favicon.ico',
+  },
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Professional Cleaning Services - Tomball, Magnolia, The Woodlands & More | Fann's Cleaning",
-    description: "Over 10 years delivering spotless homes & offices in Montgomery County. Pet-friendly products, transparent pricing, personalized service. Trusted by 500+ clients. Call (346) 588-0262 today!",
-    url: "https://fannscleaningservices.com",
+    title: "Cleaning Services Tomball, Magnolia & The Woodlands TX | Fann's Cleaning",
+    description:
+      "Trusted residential & commercial cleaning across Montgomery County. 10+ years, pet-friendly products, 500+ 5-star reviews. Call (346) 588-0262 for a free quote.",
+    url: SITE_URL,
     siteName: "Fann's Cleaning Services",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&h=630&fit=crop",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Professional cleaning service - spotless home interior in Tomball TX",
+        alt: "Spotless living room cleaned by Fann's Cleaning Services in Tomball TX",
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Professional Cleaning Services | Tomball, Magnolia, The Woodlands TX",
-    description: "10+ years experience. Pet-friendly. 500+ satisfied clients. Residential & Commercial Cleaning. Serving Montgomery County & surrounding areas. Free quotes!",
-    images: ["https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&h=630&fit=crop"],
+    card: 'summary_large_image',
+    title: "Cleaning Services Tomball, Magnolia & The Woodlands TX | Fann's Cleaning",
+    description:
+      "10+ years cleaning homes & offices across Montgomery County. Pet-friendly, insured, 500+ five-star reviews. Free quotes: (346) 588-0262.",
+    images: [OG_IMAGE],
+    site: '@CleaningFann',
+    creator: '@CleaningFann',
   },
   robots: {
     index: true,
@@ -40,10 +76,14 @@ export const metadata: Metadata = {
       follow: true,
       'max-image-preview': 'large',
       'max-snippet': -1,
+      'max-video-preview': -1,
     },
   },
-  verification: {
-    google: 'your-google-site-verification-code',
+  other: {
+    'geo.region': 'US-TX',
+    'geo.placename': 'Tomball',
+    'geo.position': '30.0933;-95.6163',
+    ICBM: '30.0933, -95.6163',
   },
 };
 
