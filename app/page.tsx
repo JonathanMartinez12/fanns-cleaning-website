@@ -538,6 +538,14 @@ export default function HomePage() {
                 color: "from-slate-600 to-slate-700",
                 image: "/window_cleaning.png"
               },
+              {
+                icon: "deep",
+                title: "Deep Cleaning",
+                desc: "A thorough top-to-bottom clean for homes and businesses that need more than routine maintenance. We tackle built-up grime, grease, and hard-to-reach areas for a truly fresh start.",
+                features: ["Inside Appliances", "Baseboards & Trim", "Cabinet Interiors", "Bathroom Scrub-Down", "One-Time or Recurring"],
+                color: "from-violet-500 to-purple-600",
+                image: "/deep_cleaning.png"
+              },
             ].map((service, i) => (
               <div
                 key={i}
@@ -588,6 +596,11 @@ export default function HomePage() {
                     {service.icon === 'window' && (
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 12h16M12 4v16" />
+                      </svg>
+                    )}
+                    {service.icon === 'deep' && (
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636 6.364l.707-.707M6.343 6.343l-.707-.707M12 21v-1M12 8a4 4 0 100 8 4 4 0 000-8z" />
                       </svg>
                     )}
                   </div>
@@ -707,7 +720,6 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { img: "/nice_kitchen.png", title: "Sparkling Clean Kitchen" },
-              { img: "/new_construction_cleaning.png", title: "New Construction Clean" },
               { img: "/livingroom_2.png", title: "Spotless Living Room" },
               { img: "/commercial_cleaning.png", title: "Commercial Space Cleaning" },
               { img: "/texas_living_room.png", title: "Deep Cleaning Service" },
