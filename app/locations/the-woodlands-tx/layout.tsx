@@ -69,6 +69,13 @@ export default function TheWoodlandsLayout({
       '@type': 'City',
       name: 'The Woodlands',
       '@id': 'https://en.wikipedia.org/wiki/The_Woodlands,_Texas'
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '500',
+      bestRating: '5',
+      worstRating: '1'
     }
   };
 

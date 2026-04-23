@@ -1012,6 +1012,80 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="py-28 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-block px-5 py-2 bg-blue-50 text-blue-800 rounded-full text-sm font-medium mb-4 border border-blue-100">
+              Frequently Asked Questions
+            </div>
+            <h2 className="text-5xl font-bold mb-6 text-slate-900">
+              Answers to Common Questions
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Everything you need to know about our cleaning services in Tomball, Magnolia, The Woodlands and surrounding Montgomery County communities.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: 'What areas do you serve?',
+                a: "Fann's Cleaning Services serves Tomball, Magnolia, The Woodlands, Conroe, Willis, Cypress, Spring, and Pinehurst, TX, plus surrounding Montgomery County and North Harris County communities."
+              },
+              {
+                q: 'How much does a house cleaning cost in Tomball or Magnolia TX?',
+                a: 'Pricing is based on the size of your home, level of cleaning (standard, deep, or move-in/move-out), and frequency. We provide free, transparent, no-obligation quotes — call (346) 588-0262 or request one on our website.'
+              },
+              {
+                q: 'Are your cleaning products pet-friendly and safe for kids?',
+                a: 'Yes. We use pet-friendly, eco-conscious products that are safe for children, pets, and sensitive family members.'
+              },
+              {
+                q: 'Do you bring your own cleaning supplies and equipment?',
+                a: 'Yes. We arrive fully equipped with professional-grade supplies and equipment. You do not need to provide anything.'
+              },
+              {
+                q: 'Do you offer move-in and move-out cleaning?',
+                a: 'Yes. Move-in and move-out cleaning is one of our most requested services in Magnolia, Tomball, Pinehurst, and The Woodlands. We deep clean the entire home so it is ready for the next resident or final walk-through.'
+              },
+              {
+                q: 'Are you insured?',
+                a: "Yes, Fann's Cleaning Services is fully insured for your peace of mind."
+              },
+              {
+                q: 'How soon can you schedule a cleaning?',
+                a: 'We often accommodate same-week and last-minute cleanings depending on availability. Call (346) 588-0262 for the fastest scheduling.'
+              },
+              {
+                q: 'Do you clean commercial offices and restaurants?',
+                a: 'Yes. In addition to residential cleaning we provide commercial, office, restaurant, janitorial, and post-construction cleaning across Montgomery County and North Harris County.'
+              }
+            ].map((item, i) => (
+              <details
+                key={i}
+                className="group bg-slate-50 border border-slate-200 rounded-xl p-6 open:shadow-md open:bg-white transition-all"
+              >
+                <summary className="flex items-center justify-between cursor-pointer list-none">
+                  <h3 className="text-lg font-semibold text-slate-900 pr-6">
+                    {item.q}
+                  </h3>
+                  <svg
+                    className="w-5 h-5 text-blue-700 flex-shrink-0 transition-transform group-open:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="mt-4 text-slate-700 leading-relaxed">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="py-28 bg-gradient-to-br from-slate-800 via-slate-800 to-slate-900 text-white relative overflow-hidden">
         {/* Decorative elements with animation */}

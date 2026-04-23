@@ -69,6 +69,13 @@ export default function TomballLayout({
       '@type': 'City',
       name: 'Tomball',
       '@id': 'https://en.wikipedia.org/wiki/Tomball,_Texas'
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '500',
+      bestRating: '5',
+      worstRating: '1'
     }
   };
 

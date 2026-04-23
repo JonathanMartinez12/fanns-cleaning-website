@@ -160,8 +160,49 @@ export default function RootLayout({
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
-      reviewCount: '500'
+      reviewCount: '500',
+      bestRating: '5',
+      worstRating: '1'
     },
+    review: [
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'Michael M.' },
+        reviewBody: "Needed a last minute clean of the house before the holidays. Kevin and his team made it quick and painless. The house was absolutely spotless. 10/10 recommended."
+      },
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'Susan F.' },
+        reviewBody: "I called to hire Fann's for a deep clean of my house. I have 3 hairy dogs and a lot of dust. They came within days and cleaned absolutely everything. My house is like brand new."
+      },
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'Vickie M.' },
+        reviewBody: "Fann's Cleaning Service is outstanding in every way. Not only are they professional but also pay attention to detail. Honest and extremely trustworthy."
+      },
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'Rayne L.' },
+        reviewBody: "I had a deep cleaning done. They took their time and literally cleaned my house from top to bottom. Fann Cleaning Service exceeded my expectations."
+      },
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'Summer P.' },
+        reviewBody: "We needed a deep clean of our house on short notice. They didn't hesitate to fit us in the day we needed it. Very accommodating. Our house looks new again."
+      }
+    ],
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 30.0933,
+      longitude: -95.6163
+    },
+    currenciesAccepted: 'USD',
+    paymentAccepted: 'Cash, Credit Card, Venmo, Zelle',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -254,12 +295,87 @@ export default function RootLayout({
     }
   };
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What areas do you serve?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Fann's Cleaning Services serves Tomball, Magnolia, The Woodlands, Conroe, Willis, Cypress, Spring, and Pinehurst, TX, plus surrounding Montgomery County and North Harris County communities."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How much does a house cleaning cost in Tomball or Magnolia TX?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Pricing is based on the size of your home, level of cleaning (standard, deep, or move-in/move-out), and frequency. We provide free, transparent, no-obligation quotes — call (346) 588-0262 or request one on our website.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Are your cleaning products pet-friendly and safe for kids?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We use pet-friendly, eco-conscious products that are safe for children, pets, and sensitive family members.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you bring your own cleaning supplies and equipment?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We arrive fully equipped with professional-grade supplies and equipment. You do not need to provide anything.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you offer move-in and move-out cleaning?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Move-in and move-out cleaning is one of our most requested services in Magnolia, Tomball, Pinehurst, and The Woodlands. We deep clean the entire home so it is ready for the next resident or final walk-through.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Are you insured?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Yes, Fann's Cleaning Services is fully insured for your peace of mind."
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How soon can you schedule a cleaning?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We often accommodate same-week and last-minute cleanings depending on availability. Call (346) 588-0262 for the fastest scheduling.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you clean commercial offices and restaurants?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. In addition to residential cleaning we provide commercial, office, restaurant, janitorial, and post-construction cleaning across Montgomery County and North Harris County.'
+        }
+      }
+    ]
+  };
+
   return (
     <html lang="en">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       </head>
       <body className="antialiased bg-white text-gray-900">
