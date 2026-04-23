@@ -512,7 +512,7 @@ export default function HomePage() {
                 desc: "Affordable commercial cleaning services for offices, commercial buildings, and restaurants in Magnolia TX, Pinehurst TX, and the 77377 area. From light commercial cleaning to full janitorial services, we keep your business spotless with reliable after-hours service.",
                 features: ["Office & Commercial Buildings", "Restaurant Cleaning", "Janitorial Services", "Light Commercial Cleaning", "After-Hours Service"],
                 color: "from-teal-500 to-cyan-600",
-                image: "/commercial_cleaning.png"
+                image: "/office_kitchen.png"
               },
               {
                 icon: "construction",
@@ -520,7 +520,7 @@ export default function HomePage() {
                 desc: "Professional construction cleaning in Pinehurst TX and surrounding areas. Thorough cleanup for newly built or renovated spaces — we remove construction dust, debris, and residue to prepare your property for move-in or showcase.",
                 features: ["Dust & Debris Removal", "Window Cleaning", "Surface Polishing", "Final Touch-Ups", "Move-In Ready"],
                 color: "from-amber-500 to-orange-600",
-                image: "/new_construction_cleaning.png"
+                image: "/before_afters.png"
               },
               {
                 icon: "water",
@@ -529,14 +529,6 @@ export default function HomePage() {
                 features: ["Driveway Cleaning", "Patio & Deck Washing", "Siding Restoration", "Fence Cleaning", "Concrete Surfaces"],
                 color: "from-blue-500 to-cyan-600",
                 image: "/window_cleaning.png"
-              },
-              {
-                icon: "gutter",
-                title: "Gutter Cleaning",
-                desc: "Protect your home from water damage with professional gutter cleaning. We remove leaves, debris, and buildup to ensure proper drainage and prevent costly repairs.",
-                features: ["Debris Removal", "Downspout Clearing", "Gutter Flushing", "Inspection", "Preventive Maintenance"],
-                color: "from-emerald-500 to-green-600",
-                image: "/deep_cleaning.png"
               },
               {
                 icon: "window",
@@ -715,12 +707,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { img: "/nice_kitchen.png", title: "Sparkling Clean Kitchen" },
-              { img: "/bathroom.png", title: "Pristine Bathroom" },
-              { img: "/livingroom.png", title: "Fresh Living Space" },
               { img: "/new_construction_cleaning.png", title: "New Construction Clean" },
               { img: "/livingroom_2.png", title: "Spotless Living Room" },
               { img: "/commercial_cleaning.png", title: "Commercial Space Cleaning" },
-              { img: "/deep_cleaning.png", title: "Deep Cleaning Service" },
+              { img: "/texas_living_room.png", title: "Deep Cleaning Service" },
               { img: "/livingroom_3.png", title: "Living Room Refresh" },
               { img: "/window_cleaning.png", title: "Window Cleaning Service" }
             ].map((item, i) => (
