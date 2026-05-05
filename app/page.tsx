@@ -183,12 +183,37 @@ export default function HomePage() {
 
     try {
       // Send email using EmailJS
+      // Send under multiple common variable names so the template works
+      // regardless of which naming convention is used in EmailJS
       const templateParams = {
+        // Name variations
         from_name: formData.fullName,
+        name: formData.fullName,
+        user_name: formData.fullName,
+        full_name: formData.fullName,
+        sender_name: formData.fullName,
+
+        // Email variations (reply_to is what EmailJS uses for the "Reply-To" header)
         from_email: formData.email,
+        email: formData.email,
+        user_email: formData.email,
+        reply_to: formData.email,
+        sender_email: formData.email,
+
+        // Phone variations
         phone: formData.phone,
+        user_phone: formData.phone,
+        contact_phone: formData.phone,
+
+        // Service type variations
         service_type: formData.serviceType,
+        service: formData.serviceType,
+        subject: formData.serviceType,
+
+        // Message variations
         message: formData.message,
+        user_message: formData.message,
+        body: formData.message,
       };
 
       console.log('[EmailJS Debug] Sending email with params:', templateParams);
