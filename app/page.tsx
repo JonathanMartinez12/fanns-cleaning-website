@@ -279,7 +279,7 @@ export default function HomePage() {
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group">
               <Image
-                src="/fannlogo.png"
+                src="/newfannslogo-trimmed.png"
                 alt="Fann's Cleaning Logo"
                 width={44}
                 height={44}
@@ -359,14 +359,6 @@ export default function HomePage() {
                 <span className="xl:hidden">Call</span>
               </a>
 
-              {/* Portal Login */}
-              <button
-                onClick={() => window.open('https://pro.housecallpro.com/app/settings/online_booking/settings/onboarding', '_blank')}
-                className="bg-[#0f77cc] text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
-              >
-                LOG IN TO PORTAL
-              </button>
-
             </div>
 
             {/* Mobile Menu Button */}
@@ -437,12 +429,6 @@ export default function HomePage() {
                     </svg>
                     (346) 588-0262
                   </a>
-                  <button
-                    onClick={() => { setIsMobileMenuOpen(false); window.open('https://pro.housecallpro.com/app/settings/online_booking/settings/onboarding', '_blank'); }}
-                    className="w-full text-center bg-[#0f77cc] text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all"
-                  >
-                    LOG IN TO PORTAL
-                  </button>
                 </div>
               </div>
             </div>
@@ -545,7 +531,7 @@ export default function HomePage() {
                 desc: "Professional construction cleaning in Pinehurst TX and surrounding areas. Thorough cleanup for newly built or renovated spaces — we remove construction dust, debris, and residue to prepare your property for move-in or showcase.",
                 features: ["Dust & Debris Removal", "Window Cleaning", "Surface Polishing", "Final Touch-Ups", "Move-In Ready"],
                 color: "from-amber-500 to-orange-600",
-                image: "/before_afters.png"
+                image: "/newPressureWashing2.JPEG.jpeg"
               },
               {
                 icon: "water",
@@ -553,7 +539,7 @@ export default function HomePage() {
                 desc: "Restore your property's curb appeal with professional pressure washing. We clean driveways, patios, decks, siding, and more to remove dirt, grime, and stains.",
                 features: ["Driveway Cleaning", "Patio & Deck Washing", "Siding Restoration", "Fence Cleaning", "Concrete Surfaces"],
                 color: "from-blue-500 to-cyan-600",
-                image: "/window_cleaning.png"
+                image: "/newPressureWashing.PNG.png"
               },
               {
                 icon: "window",
@@ -569,7 +555,7 @@ export default function HomePage() {
                 desc: "A thorough top-to-bottom clean for homes and businesses that need more than routine maintenance. We tackle built-up grime, grease, and hard-to-reach areas for a truly fresh start.",
                 features: ["Inside Appliances", "Baseboards & Trim", "Cabinet Interiors", "Bathroom Scrub-Down", "One-Time or Recurring"],
                 color: "from-violet-500 to-purple-600",
-                image: "/deep_cleaning.png"
+                image: "/newCleanButlersPantry.JPEG.jpeg"
               },
             ].map((service, i) => (
               <div
