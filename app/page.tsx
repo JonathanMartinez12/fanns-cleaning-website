@@ -531,7 +531,7 @@ export default function HomePage() {
                 desc: "Professional construction cleaning in Pinehurst TX and surrounding areas. Thorough cleanup for newly built or renovated spaces — we remove construction dust, debris, and residue to prepare your property for move-in or showcase.",
                 features: ["Dust & Debris Removal", "Window Cleaning", "Surface Polishing", "Final Touch-Ups", "Move-In Ready"],
                 color: "from-amber-500 to-orange-600",
-                image: "/newPressureWashing2.JPEG.jpeg"
+                image: "/final-post-and-new-construction.png"
               },
               {
                 icon: "water",
@@ -539,7 +539,7 @@ export default function HomePage() {
                 desc: "Restore your property's curb appeal with professional pressure washing. We clean driveways, patios, decks, siding, and more to remove dirt, grime, and stains.",
                 features: ["Driveway Cleaning", "Patio & Deck Washing", "Siding Restoration", "Fence Cleaning", "Concrete Surfaces"],
                 color: "from-blue-500 to-cyan-600",
-                image: "/newPressureWashing.PNG.png"
+                image: "/final-pressure-washing-final.png"
               },
               {
                 icon: "window",
